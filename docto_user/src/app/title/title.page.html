@@ -1,0 +1,70 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>title</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+<ion-content (click)="dismiss()">
+
+</ion-content>
+<ion-footer no-border>
+	<div class="form">
+		<ion-icon class="zmdi zmdi-close ion-text-end" (click)="dismiss()"></ion-icon>
+
+		<ion-list lines="none">
+			<h1>{{'select_address_type' | translate}}</h1>
+			<ion-radio-group>
+				<ion-row>
+					<ion-col size="4">
+						<ion-item lines="none">
+							<ion-radio slot="start" value="home"></ion-radio>
+							<ion-label class="d-flex">
+								<div class="img_container">
+									<div class="img_box">
+										<img src="assets/images/ic_home.png">
+										<img src="assets/images/ic_home_active.png">
+									</div>
+									<h2>Home</h2>
+								</div>
+							</ion-label>
+						</ion-item>
+					</ion-col>
+					<ion-col size="4">
+						<ion-item lines="none">
+							<ion-radio slot="start" value="office"></ion-radio>
+							<ion-label class="d-flex">
+								<div class="img_container">
+									<div class="img_box">
+										<img src="assets/images/ic_office.png">
+										<img src="assets/images/ic_office_active.png">
+									</div>
+									<h2>Office</h2>
+								</div>
+							</ion-label>
+						</ion-item>
+					</ion-col>
+					<ion-col size="4">
+						<ion-item lines="none">
+							<ion-radio slot="start" value="Other"></ion-radio>
+							<ion-label class="d-flex">
+								<div class="img_container">
+									<div class="img_box">
+										<img src="assets/images/ic_location.png">
+										<img src="assets/images/ic_location_active.png">
+									</div>
+									<h2>Other</h2>
+								</div>
+							</ion-label>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-item lines="none">
+					<ion-label position="floating">{{'enter_address_detail' | translate}}</ion-label>
+					<ion-input type="text" value="14134, silver Green Street, 2nd Avenue"></ion-input>
+				</ion-item>
+			</ion-radio-group>
+		</ion-list>
+	</div>
+	<ion-button size="large" shape="full" class="btn" (click)="dismiss()">{{'save' | translate}}</ion-button>
+</ion-footer>

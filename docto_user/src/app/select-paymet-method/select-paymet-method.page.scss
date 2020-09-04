@@ -1,0 +1,157 @@
+.order-steps {
+	//padding-top: 10px;
+	background: var(--primary);
+	overflow: hidden;
+	padding-bottom: 10px;
+
+	ion-col {
+		height: 50px;
+		line-height: 50px;
+		position: relative;
+		padding: 0 0;
+		margin: 0 5px;
+		width: calc(33.33% - 5px);
+		max-width: calc(33.33% - 5px);
+		margin: 0 auto;
+
+		ion-icon {
+			font-size: 1.45rem;
+			color: var(--white);
+			width: 35px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 99;
+			background: var(--primary);
+			min-height: unset;
+			top: 7px;
+
+			&::before {
+				opacity: 0.5;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 3px;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			width: 50%;
+			height: 5px;
+			z-index: 1;
+			background: url(../../assets/images/dot.png);
+			background-repeat: no-repeat;
+			background-repeat: repeat-x;
+			background-size: 13px;
+			opacity: 0.5;
+		}
+
+		&::after {
+			right: 0;
+			left: unset;
+		}
+
+		&:first-child {
+			&::before {
+				display: none;
+			}
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+
+		&.done {
+			ion-icon {
+				&::before {
+					opacity: 1;
+				}
+			}
+
+			&::after,
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+.form {
+	padding-top: 13px;
+	width: calc(100% - 25px);
+
+	h3 {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 500;
+		margin-bottom: 16px;
+	}
+
+	ion-item {
+		background: var(--white) !important;
+		padding: 9px 23px;
+		margin-bottom: 7px;
+		border-radius: 9px;
+		border: none !important;
+
+		ion-label {
+			margin: 0;
+			color: #000 !important;
+			font-size: 1rem !important;
+			max-width: 100% !important;
+
+		}
+
+		ion-radio {
+			margin: 0;
+			--color: var(--text-light2) !important;
+			--color-checked: var(--secondary) !important;
+			margin-right: 23px;
+		}
+	}
+}
+
+ion-footer {
+	padding-top: 12px;
+
+	.amount_payable {
+		width: 100%;
+		padding-bottom: 14px;
+		width: calc(100% - 31px);
+		margin: 0 auto;
+
+		h2 {
+			margin: 0;
+
+			font-size: .9rem;
+			font-weight: 500;
+			color: var(--text-light);
+
+			ion-icon {
+				color: var(--primary);
+				margin: 0 10px;
+				font-size: 1.3rem;
+			}
+
+			span {
+				color: #000;
+				font-size: 1.1rem;
+			}
+		}
+
+	}
+
+	.button.btn {
+		ion-icon {
+			position: absolute;
+			right: 0px;
+			font-size: 1.8rem !important;
+
+		}
+	}
+}

@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'register_now' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<div class="form">
+		<p class="ion-text-center">{{'register_now_message' | translate}} <br>{{'register_now_message2' | translate}}</p>
+
+		<ion-list lines="none">
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'phone_number' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="text" value="987 654 3210"></ion-input>
+			</ion-item>
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="Sam Smith"></ion-input>
+			</ion-item>
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="samsmith@mail.com"></ion-input>
+			</ion-item>
+			<ion-button size="large" shape="block" class="btn" (click)="continue()">{{'continue' | translate}}</ion-button>
+		</ion-list>
+		<h4 class="ion-text-center" (click)="sign_in()">{{'back_to_sign_in' | translate}}</h4>
+	</div>
+ 
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<div class="form">
+		<p class="ion-text-center">{{'will_send_an_otp_on_above' | translate}} <br>{{'given_phone_number' | translate}}</p>
+	</div> 
+</ion-footer>

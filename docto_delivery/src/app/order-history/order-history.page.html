@@ -1,0 +1,111 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			30 Jun 2018, 11:59 am
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+	<div class="order_info">
+		<div class="item_container">
+			<div class="item">
+				<h2>Vics VapoRub Balm</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 500gm</span>
+					<span class="end">$ 6.00</span>
+				</p>
+			</div>
+			<div class="item">
+				<h2>Non Drosy Laritin Tablet</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 100gm</span>
+					<span class="end">$ 8.00</span>
+				</p>
+			</div>
+			<div class="item">
+				<h2>Xenical 120mg Tablet</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 500gm</span>
+					<span class="end">$ 4.00</span>
+				</p>
+			</div>
+			<div class="item">
+				<h2>Vics VapoRub Balm</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 500gm</span>
+					<span class="end">$ 6.00</span>
+				</p>
+			</div>
+			<div class="item">
+				<h2>Non Drosy Laritin Tablet</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 100gm</span>
+					<span class="end">$ 8.00</span>
+				</p>
+			</div>
+			<div class="item">
+				<h2>Xenical 120mg Tablet</h2>
+				<p class="d-flex">
+					<span class="item_about">Pack of 500gm</span>
+					<span class="end">$ 4.00</span>
+				</p>
+			</div>
+		</div>
+		<div class="payment_detail">
+			<h2 class="d-flex">
+				{{'cash_on_delivery' | translate}}
+				<span class="end ion-text-end">$ 20.00</span>
+			</h2>
+		</div>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-card>
+		<div class="card_header">
+			<ion-row>
+				<ion-col size="7">
+					<div class="text_box">
+						<h2>{{'distance' | translate}}</h2>
+						<h3>16.5 km <span>(20 min)</span></h3>
+					</div>
+				</ion-col>
+
+				<ion-col size="5">
+					<div class="text_box">
+						<h2>{{'earnings' | translate}}</h2>
+						<h3>$ 5.20</h3>
+					</div>
+				</ion-col>
+			</ion-row>
+		</div>
+
+		<div class="delivery_details">
+			<div class="delivery_address d-flex">
+				<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+				<div class="text_box">
+					<h2>WallkHeart Medicla Store</h2>
+					<p>1024, Hemioton Street, Union Market, USA</p>
+				</div>
+			</div>
+
+			<div class="dotted">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="delivery_address d-flex">
+				<ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
+				<div class="text_box">
+					<h2>Sam Smith</h2>
+					<p>D-32, Deniel Street, Centerl Residency</p>
+				</div>
+			</div>
+		</div>
+	</ion-card>
+	<ion-button size="large" shape="full" class="btn" (click)="home()">{{'mark_as_picked' | translate}}</ion-button>
+</ion-footer>

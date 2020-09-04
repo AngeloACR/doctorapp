@@ -1,0 +1,39 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'order_placed' | translate}}</ion-title>
+	</ion-toolbar>
+
+	<ion-row class="order-steps">
+		<ion-col size="4" class="done ion-text-center">
+			<ion-icon class="zmdi zmdi-mall"></ion-icon>
+		</ion-col>
+		<ion-col size="4" class="done ion-text-center">
+			<ion-icon class="zmdi zmdi-card"></ion-icon>
+		</ion-col>
+		<ion-col size="4" class="done ion-text-center">
+			<ion-icon class="zmdi zmdi-assignment-check"></ion-icon>
+		</ion-col>
+	</ion-row>
+</ion-header>
+
+<ion-content>
+	<div class="container ion-text-center">
+		<div class="img_box">
+			<img src="assets/images/order_places.png">
+		</div>
+		<h1>{{'your_order_placed' | translate}} !!</h1>
+		<p>{{'your_order_has_been_placed' | translate}}<br>
+			{{'successfull' | translate}}<br>
+			{{'visit_my_order' | translate}}<br>
+			{{'to_check_order_status' | translate}}
+		</p>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="continue_shopping()">
+		{{'continue_shopping' | translate}}
+	</ion-button>
+</ion-footer>

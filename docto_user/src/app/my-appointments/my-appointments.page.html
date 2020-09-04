@@ -1,0 +1,399 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>{{'my_appointments' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+	<ion-list lines="none">
+		<h2>{{'upcoming_appointments' | translate}}</h2>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>WEB</h3>
+					<h4>12</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>TUE</h3>
+					<h4>18</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+
+		<h2>{{'past_appointments' | translate}}</h2>
+
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+			<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>FEB</h3>
+					<h4>15</h4>
+					<h3>12:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Joseph Williamson</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Cadiac Surgeon</h3>
+						</div>
+					</div>
+					<p>At Apple Hospital, Walter street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="appointment_detail()">
+			<div class="item_inner d-flex">
+				<div class="date_time">
+					<h3>Jan</h3>
+					<h4>21</h4>
+					<h3>14:00</h3>
+				</div>
+				<div class="appointment_details">
+					<div class="doctor_details d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/doc6.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2 class="d-flex">
+								<span class="name">Dr. Anglina Taylor</span>
+								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+							</h2>
+							<h3>Neurosurgeon</h3>
+						</div>
+					</div>
+					<p>At Rainbow Hospital, MG street, Wallington, New York.</p>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

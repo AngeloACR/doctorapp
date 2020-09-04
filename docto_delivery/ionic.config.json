@@ -1,0 +1,7 @@
+{
+  "name": "doctorWorldDelivery",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

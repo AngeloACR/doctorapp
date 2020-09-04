@@ -1,0 +1,97 @@
+ion-header ion-toolbar ion-title {
+	padding: 0 22px !important;
+}
+
+ion-list {
+	background: var(--transparent) !important;
+	margin: 0;
+	padding: 0;
+	padding-top: 20px;
+	margin-bottom: 50px;
+	ion-item {
+		padding: 7px 25px;
+		margin-bottom: 11px;
+		min-height: unset !important;
+		box-shadow: none !important;
+		--background: var(--transparent);
+		--inner-padding-end: 0px;
+		--inner-min-height: unset !important;
+		--padding-start: 0;
+
+		.item_inner {
+			ion-icon {
+				color: var(--primary);
+				font-size: 1.3rem;
+				min-width: 41px;
+			}
+
+			h2 {
+				margin: 0;
+				font-size: 1.15rem;
+
+			}
+		}
+
+		&.profile {
+			padding: 7px 17px;
+
+			.item_inner {
+				.img_box {
+					min-width: 68px;
+					height: 68px;
+					border-radius: 50%;
+					margin-right: 20px;
+				}
+
+				.text_box {
+					p {
+						margin: 0;
+						color: var(--text-light);
+						font-weight: 500;
+						font-size: .95rem;
+						opacity: .6;
+					}
+				}
+			}
+		}
+
+		&.track_order {
+			background: var(--bg-color);
+			margin-top: 14px;
+
+			.item_inner h2 {
+				color: var(--primary);
+			}
+		}
+	}
+}
+
+.buy_this_app {
+	background: #4AC20F; 
+	left: 20px;
+    position: fixed;
+    bottom: 37px; 
+	border-radius: 50px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	min-width: 165px;
+	z-index: 99999;
+	width: fit-content;
+	box-shadow: 0 8px 5px 1px rgba(106, 198, 60, 0.42);
+	h2 {
+		color: var(--white);
+		display: flex;
+		align-items: center;
+		margin: auto;
+		width: fit-content;
+		font-size: 1.1rem;
+		font-weight: 400;
+		padding: 0;
+
+		ion-icon {
+			font-size: 1rem;
+			min-width: 24px;
+		}
+	}
+}

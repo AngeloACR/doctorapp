@@ -1,0 +1,113 @@
+ion-card {
+	margin: 0;
+	width: 100%;
+	margin-bottom: 8px;
+	border-radius: 0;
+	padding: 15px 17px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
+		rgba(0, 0, 0, 0.14) 0px 2px 4px 0px,
+		rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+	padding: 15px 17px 18px 17px;
+
+	.doctor_details {
+		padding-bottom: 17px;
+		width: 100%;
+
+		.img_box {
+			min-width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			margin-right: 12px;
+		}
+
+		.text_box {
+			width: 100%;
+			overflow: hidden;
+
+			h2 {
+				margin: 0;
+				font-size: .95rem;
+				font-weight: 500;
+				padding-bottom: 4px;
+				color: var(--text-dark);
+
+				span {
+					&.name {
+						display: block;
+						width: 100%;
+					}
+
+					&.cancel {
+						color: var(--red_color);
+						min-width: 60px;
+					}
+
+				}
+			}
+
+			h3 {
+				margin: 0;
+				color: var(--text-light);
+				font-size: .75rem;
+			}
+		}
+	}
+
+	.appointment_detail {
+
+		.detail_box {
+			width: 100%;
+			overflow: hidden;
+			align-items: flex-start;
+			padding: 13px 0;
+
+			ion-icon {
+				color: var(--primary);
+				font-size: 1.1rem;
+				min-width: 30px;
+				margin-right: 20px;
+			}
+
+			h5 {
+				margin: 0;
+				color: var(--primary);
+				font-weight: 400;
+				font-size: .9rem;
+			}
+
+			.text_box {
+				width: 100%;
+				overflow: hidden;
+
+				h2 {
+					color: var(--text-light2);
+					font-weight: 400;
+					margin: 0;
+					font-size: .75rem;
+					padding-bottom: 7px;
+				}
+
+				h3 {
+					color: #000;
+					margin: 0;
+					font-size: .9rem;
+					padding-bottom: 4px;
+					font-weight: 500;
+				}
+
+				h4 {
+					margin: 0;
+					color: var(--text-light);
+					font-size: .65rem;
+				}
+
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+		}
+	}
+
+}

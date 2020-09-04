@@ -1,0 +1,59 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>{{'new_delivery_task' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<div class="map center_img">
+		<img src="assets/images/map.png" class="crop_img">
+		<div class="delivery_location" style="top: 19%; right: 88%; transform: rotate(-192deg);">
+			<img src="assets/images/deliveryman.png">
+		</div>
+		<ion-icon class="zmdi zmdi-pin ion-text-center" style="top: 39%; right: 79%;"></ion-icon>
+		<ion-icon class="zmdi zmdi-navigation ion-text-center" style="top: 40%; right: 30%;"></ion-icon>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-card>
+		<div class="card_header">
+			<h2>{{'distance' | translate}}</h2>
+			<h3>16.5 km <span>(20 min)</span></h3>
+		</div>
+
+		<div class="delivery_details">
+			<div class="delivery_address d-flex">
+				<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+				<div class="text_box">
+					<h2>WallkHeart Medicla Store</h2>
+					<p>1024, Hemioton Street, Union Market, USA</p>
+				</div>
+<!--
+				<div class="iocn_box end d-flex">
+					<ion-icon class="zmdi zmdi-comment-alt-text ion-text-start end"></ion-icon>
+					<ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
+				</div>
+-->
+			</div>
+			<div class="dotted">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="delivery_address d-flex">
+				<ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
+				<div class="text_box">
+					<h2>Sam Smith</h2>
+					<p>D-32, Deniel Street, Centerl Residency</p>
+				</div>
+<!--
+				<div class="iocn_box end d-flex">
+					<ion-icon class="zmdi zmdi-comment-alt-text ion-text-start end"></ion-icon>
+					<ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
+				</div>
+-->
+			</div>
+		</div>
+	</ion-card>
+	<ion-button size="large" shape="full" class="btn" (click)="accepted()">{{'accept_delivery' | translate}}</ion-button>
+</ion-footer>

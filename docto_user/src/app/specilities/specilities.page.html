@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'find_doctor' | translate}}</ion-title>
+	</ion-toolbar>
+	<div class="search_box d-flex">
+		<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+		<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'doctor_specialities_clinic_hospital' | translate}}"></ion-searchbar>
+	</div>
+</ion-header>
+
+<ion-content class="bg_color">
+	<ion-list lines="none">
+		<h2>{{'recent_search' | translate}}</h2>
+		<ion-item>
+			<h3>Cardiologist</h3>
+		</ion-item>
+		<ion-item>
+			<h3>Ophthalmologist</h3>
+		</ion-item>
+		<ion-item>
+			<h3>Dermatologist</h3>
+		</ion-item>
+	</ion-list>
+
+	<div class="placeholder_view ion-text-center">
+		<div class="img_box">
+			<img src="assets/images/Placeholder.png">
+		</div>
+		<h2>{{'search_experts_in_field' | translate}}</h2>
+	</div>
+</ion-content>

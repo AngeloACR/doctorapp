@@ -1,0 +1,393 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="title_inner d-flex">
+				Health Care
+				<span class="end cart_icon" (click)="cart()">
+					<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+					<ion-badge>1</ion-badge>
+				</span>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg_color">
+	<div class="item_row"> 
+		<ion-row>
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med1.png">
+						</div>
+						<h2>Vicks VapoRub<br> Balm</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$6.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med2.png">
+						</div>
+						<h2>Salospir<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$17.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med3.png">
+						</div>
+						<h2>Xenical" 120 mg<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$7.40</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med4.png">
+						</div>
+						<h2> Arbor-OTC <br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$3.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med5.png">
+						</div>
+						<h2> Allergy Relief<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$10.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med6.png">
+						</div>
+						<h2>Claritin<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$12.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+			
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med1.png">
+						</div>
+						<h2>Vicks VapoRub<br> Balm</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$6.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med2.png">
+						</div>
+						<h2>Salospir<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$17.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med3.png">
+						</div>
+						<h2>Xenical" 120 mg<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$7.40</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med4.png">
+						</div>
+						<h2> Arbor-OTC <br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$3.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med5.png">
+						</div>
+						<h2> Allergy Relief<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$10.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med6.png">
+						</div>
+						<h2>Claritin<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$12.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+			
+			
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med1.png">
+						</div>
+						<h2>Vicks VapoRub<br> Balm</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$6.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med2.png">
+						</div>
+						<h2>Salospir<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$17.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med3.png">
+						</div>
+						<h2>Xenical" 120 mg<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$7.40</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med4.png">
+						</div>
+						<h2> Arbor-OTC <br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$3.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med5.png">
+						</div>
+						<h2> Allergy Relief<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$10.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med6.png">
+						</div>
+						<h2>Claritin<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$12.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+			
+			
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med1.png">
+						</div>
+						<h2>Vicks VapoRub<br> Balm</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$6.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med2.png">
+						</div>
+						<h2>Salospir<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$17.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med3.png">
+						</div>
+						<h2>Xenical" 120 mg<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$7.40</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med4.png">
+						</div>
+						<h2> Arbor-OTC <br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$3.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med5.png">
+						</div>
+						<h2> Allergy Relief<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$10.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+
+
+			<ion-col size="6">
+				<div class="item ion-text-center">
+					<div class="item_content" (click)="item_info()">
+						<div class="img_box">
+							<img src="assets/images/med6.png">
+						</div>
+						<h2>Claritin<br> Tablets</h2>
+					</div>
+					<div class="item_footer d-flex">
+						<h3 class="ion-text-center">$12.00</h3>
+						<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
+					</div>
+				</div>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button  text=""  icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'my_address' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg_color">
+	<div class="form">
+		<h3>{{'saved_addresses' | translate}}</h3>
+		<ion-list lines="none">
+			<ion-radio-group>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="home"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_home.png">
+								<img src="assets/images/ic_home_active.png">
+							</div>
+							<h2>Home</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="office"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_office.png">
+								<img src="assets/images/ic_office_active.png">
+							</div>
+							<h2>Office</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="Other"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_location.png">
+								<img src="assets/images/ic_location_active.png">
+							</div>
+							<h2>Other</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+			</ion-radio-group>
+			
+			<ion-button size="large" shape="block" class="btn" (click)="add_new()">
+				<ion-icon class="zmdi zmdi-plus"></ion-icon> &nbsp;
+				{{'add_new_location' | translate}}
+			</ion-button>
+		</ion-list>
+	</div>
+</ion-content>

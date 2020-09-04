@@ -1,0 +1,16 @@
+ion-header {
+	box-shadow: 0 5px 16px 6px rgba(254, 234, 212, 0.92);
+}
+.container {
+	width: calc(100% - 40px);
+	margin: 0 auto;
+	padding-top: 20px;
+
+	p { 
+		margin: 0;
+		margin-bottom: 20px;
+		font-weight: 500;
+		font-size: 1.2rem;
+		line-height: 25px;
+	}
+}

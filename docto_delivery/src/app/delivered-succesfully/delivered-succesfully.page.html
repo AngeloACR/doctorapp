@@ -1,0 +1,36 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>delivered-succesfully</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content>
+	<div class="container">
+		<div class="img_box">
+			<img src="assets/images/delivery_completed.png">
+		</div>
+		<h1 class="ion-text-center">
+			{{'delivered_successfully' | translate}}<br>
+			<small> {{'thank_you_for_delivery_safely_on_time' | translate}}</small>
+		</h1>
+		<div class="order_info">
+			<ion-row>
+				<ion-col size="7">
+					<h2>{{'your_drived' | translate}}</h2>
+					<h3>18 min (6.5)</h3>
+					<h4 (click)="order_info()">{{'view_order_info' | translate}}</h4>
+				</ion-col>
+				<ion-col size="5">
+					<h2>{{'your_earning' | translate}}</h2>
+					<h3>$ 8.50</h3>
+					<h4 (click)="view_earnings()">{{'view_earnings' | translate}}</h4>
+				</ion-col>
+			</ion-row>
+		</div>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="home()">{{'back_to_home' | translate}}</ion-button>
+</ion-footer>

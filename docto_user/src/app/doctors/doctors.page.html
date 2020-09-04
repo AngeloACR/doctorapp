@@ -1,0 +1,376 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>
+			<div class="title_inner d-flex">
+				<div class="location" (click)="set_location()">
+					<h2 class="d-flex">
+						<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+						Wallington
+					</h2>
+				</div>
+
+				<h3 class="page_title">{{'app_title' | translate}}</h3>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+
+	<div class="banner">
+		<ion-slides pager="true" loop="true">
+			<ion-slide>
+				<div class="img_box center_img">
+					<img src="assets/images/Slider1.png" class="crop_img">
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class="img_box center_img">
+					<img src="assets/images/Slider.png" class="crop_img">
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class="img_box center_img">
+					<img src="assets/images/Slider2.png" class="crop_img">
+				</div>
+			</ion-slide>
+		</ion-slides>
+
+		<div class="search_box d-flex" (click)="search()">
+			<ion-icon name="search-outline" class="ion-text-start"></ion-icon>
+			<h2>{{'doctor_specialities_clinic_hospital' | translate}}</h2>
+		</div>
+	</div>
+
+	<div class="scroll_container">
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_doctors.png">
+			</div>
+			<h2>{{'doctors' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_dentist.png">
+			</div>
+			<h2>{{'dentist' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_ayurvedic.png">
+			</div>
+			<h2>{{'ayurvedic' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_therapist.png">
+			</div>
+			<h2>{{'therapist' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_doctors.png">
+			</div>
+			<h2>{{'doctors' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_dentist.png">
+			</div>
+			<h2>{{'dentist' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_ayurvedic.png">
+			</div>
+			<h2>{{'ayurvedic' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_therapist.png">
+			</div>
+			<h2>{{'therapist' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_doctors.png">
+			</div>
+			<h2>{{'doctors' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_dentist.png">
+			</div>
+			<h2>{{'dentist' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_ayurvedic.png">
+			</div>
+			<h2>{{'ayurvedic' | translate}}</h2>
+		</div>
+		<div class="item_srcoll" (click)="list_of_doctors()">
+			<div class="icon_box">
+				<img src="assets/images/ic_therapist.png">
+			</div>
+			<h2>{{'therapist' | translate}}</h2>
+		</div>
+	</div>
+</ion-header>
+
+<ion-content fullscreen>
+	<ion-list lines="none">
+		<h2>{{'list_of_specialities' | translate}}</h2>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		<ion-item (click)="list_of_doctors()">
+			<h3>Addiction psychiatrist</h3>
+			<h4 slot="end">
+				124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Adolescent medicine specialist</h3>
+			<h4 slot="end">
+				144
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Allergist (immunologist)</h3>
+			<h4 slot="end">
+				112
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		<ion-item (click)="list_of_doctors()">
+			<h3>Anesthesiologist</h3>
+			<h4 slot="end">
+				56
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>	
+		<ion-item (click)="list_of_doctors()">
+			<h3>Cardiac electrophysiologist</h3>
+			<h4 slot="end">
+				 98124
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+			</h4>
+		</ion-item>
+		
+		
+	 
+	</ion-list>
+</ion-content>

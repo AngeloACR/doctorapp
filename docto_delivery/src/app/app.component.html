@@ -1,0 +1,44 @@
+<ion-app [dir]="rtlSide">
+	<ion-split-pane contentId="main-content">
+		<ion-menu contentId="main-content" type="overlay">
+			<ion-header>
+				<div class="close_button">
+					<ion-menu-toggle auto-hide="false">
+						<ion-icon class="zmdi zmdi-close"></ion-icon>
+					</ion-menu-toggle>
+				</div>
+
+				<ion-menu-toggle auto-hide="false">
+					<div class="banner d-flex" (click)="view_profile()">
+						<div class="img_box center_img">
+							<img src="assets/images/img_profile.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Grorge Anderson</h2>
+							<p>{{'view_profile' | translate}}</p>
+						</div>
+					</div>
+				</ion-menu-toggle>
+			</ion-header>
+			<ion-content>
+				<ion-list lines="none">
+					<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+						<ion-item detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
+							<div class="item_inner d-flex">
+								<ion-icon class="ion-text-start" slot="start" [class]="p.icon"></ion-icon>
+								<h2>{{ p.title | translate}}</h2>
+							</div>
+						</ion-item>
+					</ion-menu-toggle>
+					<div *ngIf="config.showBuyPromt" (click)="buyAppAction()" class="buy_this_app">
+						<h2>
+							<ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>
+							{{"buy_this_app" | translate}}
+						</h2>
+					</div>
+				</ion-list>
+			</ion-content>
+		</ion-menu>
+		<ion-router-outlet id="main-content"></ion-router-outlet>
+	</ion-split-pane>
+</ion-app>

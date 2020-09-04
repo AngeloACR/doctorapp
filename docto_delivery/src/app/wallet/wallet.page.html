@@ -1,0 +1,597 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>{{'wallet' | translate}}</ion-title>
+	</ion-toolbar>
+	<div class="banner">
+		<h2>{{'available_balance' | translate}}</h2>
+		<h1>$ 520.50</h1>
+	</div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+	 	<ion-button size="large" shape="full" class="btn" (click)="send_to_bank()">{{'send_to_bank' | translate}}</ion-button>
+	
+	<ion-list lines="none">
+		<h2>{{'recent' | translate}}</h2>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+			<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Sam Smith</strong></h3>
+					<p>3 items | 30 Jun 2018, 11:59</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$80.00</h3>
+					<p>Online</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>Emilli Wlliamson</strong></h3>
+					<p>2 items | 30 Jun 2018, 10:38</p>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3>$110.00</h3>
+					<p>COD</p>
+				</ion-col>
+
+				<ion-col size="3" class="ion-text-end">
+					<h3>$5.20</h3>
+					<p>{{'earnings' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<h3><strong>{{'sent_to_bank' | translate}}</strong></h3>
+					<p> 10 Jun 2018, 09:12</p>
+				</ion-col>
+
+				<ion-col size="6" class="ion-text-end">
+					<h3>-$100.00</h3>
+					<p>{{'sent_to_bank' | translate}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+	</ion-list>
+</ion-content>

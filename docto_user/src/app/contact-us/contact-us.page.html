@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'support' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="form">
+		<h1>{{'your_words' | translate}}<br>{{'means_a_lot' | translate}}<br>{{'to_us' | translate}} !</h1>
+		<h2>{{'let_us_know_queries_feedback' | translate}}</h2>
+		<ion-list lines="none"> 
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="Sam Smith"></ion-input>
+			</ion-item>
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="samsmith@mail.com"></ion-input>
+			</ion-item>	
+			
+			<ion-item lines="none"> 
+				<ion-textarea  type="name" rows="5" placeholder="{{'enter_your_message' | translate}}"></ion-textarea>
+			</ion-item>
+			<ion-button size="large" shape="block" class="btn" >{{'submit' | translate}}</ion-button>
+		</ion-list>
+	</div>
+</ion-content>

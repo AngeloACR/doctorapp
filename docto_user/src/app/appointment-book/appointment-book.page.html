@@ -1,0 +1,176 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'select_date_time' | translate}}</ion-title>
+	</ion-toolbar>
+	<div class="doctor_info d-flex">
+		<div class="img_box center_img">
+			<img src="assets/images/doc4.png" class="crop_img">
+		</div>
+		<div class="text_box">
+			<h2>Dr. Joseph Williamson</h2>
+			<h3>Cardiac Surgeon At Apple Hospital,</h3>
+		</div>
+	</div>
+	<div class="date_container ion-text-center">
+		<div class="date" [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
+			<h3>WED</h3>
+			<h2>12</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
+			<h3>THU</h3>
+			<h2>13</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
+			<h3>FRI</h3>
+			<h2>14</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
+			<h3>SAT</h3>
+			<h2>15</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
+			<h3>SUN</h3>
+			<h2>16</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
+			<h3>MON</h3>
+			<h2>17</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
+			<h3>TUE</h3>
+			<h2>18</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
+			<h3>WED</h3>
+			<h2>19</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand9 ? 'active' : '' " (click)="faqExpandToggle9()">
+			<h3>THU</h3>
+			<h2>20</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand10 ? 'active' : '' " (click)="faqExpandToggle10()">
+			<h3>FRI</h3>
+			<h2>21</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand11 ? 'active' : '' " (click)="faqExpandToggle11()">
+			<h3>SAT</h3>
+			<h2>22</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand12 ? 'active' : '' " (click)="faqExpandToggle12()">
+			<h3>SUN</h3>
+			<h2>23</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand13 ? 'active' : '' " (click)="faqExpandToggle13()">
+			<h3>MON</h3>
+			<h2>24</h2>
+		</div>
+		<div class="date" [ngClass]="faqExpand14 ? 'active' : '' " (click)="faqExpandToggle14()">
+			<h3>TUE</h3>
+			<h2>25</h2>
+		</div>
+	</div>
+</ion-header>
+
+<ion-content fullscreen>
+	<div class="form">
+		<ion-list lines="none">
+			<ion-card>
+				<h2>{{'available_times' | translate}}</h2>
+				<ion-radio-group value="biff">
+					<ion-row>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>01:30 PM</ion-label>
+								<ion-radio slot="start" value="1"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>02:15 PM</ion-label>
+								<ion-radio slot="start" value="2"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>03:00 PM</ion-label>
+								<ion-radio slot="start" value="3"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>03:30 PM</ion-label>
+								<ion-radio slot="start" value="4"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>03:45 PM</ion-label>
+								<ion-radio slot="start" value="5"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>04:00 PM</ion-label>
+								<ion-radio slot="start" value="6"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>04:15 PM</ion-label>
+								<ion-radio slot="start" value="7"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>04:30 PM</ion-label>
+								<ion-radio slot="start" value="8"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>04:45 PM</ion-label>
+								<ion-radio slot="start" value="9"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>05:00 PM</ion-label>
+								<ion-radio slot="start" value="10"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>05:15 PM</ion-label>
+								<ion-radio slot="start" value="11"></ion-radio>
+							</ion-item>
+						</ion-col>
+						<ion-col size="3">
+							<ion-item>
+								<ion-label>05:30 PM</ion-label>
+								<ion-radio slot="start" value="12"></ion-radio>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+				</ion-radio-group>
+			</ion-card>
+			
+			<ion-card >
+				<h2>{{'appointment_for' | translate}}</h2>
+				<ion-item lines="none"> 
+					<ion-input class="ion-text-start" type="name" value="" placeholder="{{'full_name' | translate}}"></ion-input>
+				</ion-item> 
+
+				<ion-item lines="none">
+<!--					<ion-label position="fixed">{{'phone_number' | translate}}</ion-label>-->
+					<ion-input class="ion-text-start" type="number" placeholder="{{'phone_number' | translate}}"></ion-input>
+				</ion-item>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="tabs()">{{'confirm_appointment' | translate}}</ion-button>
+</ion-footer>

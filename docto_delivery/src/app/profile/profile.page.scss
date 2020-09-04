@@ -1,0 +1,137 @@
+.form {
+	background: var(--white);
+	margin-top: 5px;
+	width: 100%;
+	padding: 20px 16px 16px 16px;
+
+	h2 {
+		margin: 0;
+		color: var(--text-light);
+		font-size: 0.9rem;
+		padding: 0 0 10px 0;
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 1px;
+
+	}
+
+	.profile_image {
+		align-items: flex-start;
+		padding-top: 8px;
+
+		.img_box {
+			min-width: 90px;
+			height: 90px;
+			margin-right: 25px;
+		}
+
+		h3 {
+			margin: 0;
+			color: var(--primary);
+			font-weight: 400;
+			font-size: .9rem;
+			position: relative;
+			top: 6px;
+
+			ion-icon {
+				font-size: 1.7rem;
+				min-width: 38px;
+			}
+		}
+	}
+
+	ion-list {
+		ion-item {
+			background: none;
+			border: 0 !important;
+			border-bottom: 1px solid rgba(204, 204, 204, 0.6) !important;
+			padding: 0;
+			border-radius: 0;
+			padding-bottom: 7px;
+			margin-bottom: 10px;
+
+			ion-label {
+				width: 100% !important;
+				max-width: unset !important;
+				text-transform: uppercase;
+				font-size: .9rem !important;
+				letter-spacing: 1px;
+				padding-bottom: 16px;
+			}
+
+			ion-input {
+				font-size: 1rem !important;
+				font-weight: 400 !important;
+				margin-top: 5px;
+			}
+
+			&.item-select ion-select {
+				font-size: 1rem !important;
+				font-weight: 400 !important;
+			}
+		}
+	}
+
+	&.documentation {
+		h2{
+			padding-bottom: 22px;
+		}
+		ion-list {
+			ion-item {
+				border: none !important;
+ 
+				
+				ion-icon {
+					color: var(--text-light2);
+					min-width: 27px;
+					font-size: 1.1rem;
+				}
+
+				.item_inner {
+					align-items: flex-start;
+				}
+
+				.text_box {
+					width: 100%;
+
+					h3 {
+						margin: 0;
+						text-transform: uppercase;
+						font-size: 0.8rem !important;
+						letter-spacing: 1px;
+						color: var(--text-light) !important;
+						font-weight: 500;
+					}
+
+					h4 {
+						margin: 0;
+						font-size: 1rem !important;
+						font-weight: 400 !important;
+						margin-top: 5px;
+						color: var(--text-light2);
+
+						span {
+							&.end {
+								font-weight: 400;
+								color: var(--primary);
+								text-transform: uppercase;
+								font-size: .9rem;
+							}
+						}
+					}
+				}
+
+				&.active {
+					ion-icon {
+						color: var(--secondary) !important;
+					}
+
+					.text_box h4 {
+						color: var(--text-black);
+					}
+				}
+			}
+		}
+
+	}
+}

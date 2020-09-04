@@ -1,0 +1,47 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content class="bg_color">
+	<div class="banner">
+		<div class="logo_box">
+			<img src="assets/images/logo.png">
+		</div>
+		<div class="welcome_text ion-text-center">
+			<h2>{{'welcome' | translate}}</h2>
+			<h3>{{'please_enter_your_mobile_number' | translate}}</h3>
+		</div>
+
+		<div class="form">
+			<ion-list lines="none">
+				<ion-item lines="none">
+					<ion-label position="fixed">{{'mobile_number' | translate}}</ion-label>
+					<ion-input class="ion-text-end" type="number" value=""></ion-input>
+				</ion-item>
+				<ion-button size="large" shape="block" class="btn" (click)="continue()">{{'continue' | translate}}</ion-button>
+			</ion-list>
+		</div>
+	</div>
+	<div class="quick_signin">
+		<h4 class="ion-text-center">{{'or_quick_continue_withh' | translate}}</h4>
+		<ion-row>
+			<ion-col size="6">
+				<ion-button size="large" shape="block" class="btn facebook" (click)="tabs()">
+					<img slot="start" src="assets/images/fb.png">
+					{{'facebook' | translate}}
+				</ion-button>
+			</ion-col>
+
+			<ion-col size="6">
+				<ion-button size="large" shape="block" class="btn gmail" (click)="tabs()">
+					<img slot="start" src="assets/images/google.png">
+					{{'gmail' | translate}}
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-content>

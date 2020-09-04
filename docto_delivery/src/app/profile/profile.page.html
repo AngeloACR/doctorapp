@@ -1,0 +1,86 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>{{'edit_profile' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="form">
+		<h2>{{'feature_image' | translate}}</h2>
+		<div class="profile_image d-flex">
+			<div class="img_box center_img">
+				<img src="assets/images/img_profile.png" class="crop_img">
+			</div>
+			<h3 class="d-flex">
+				<ion-icon class="zmdi zmdi-camera ion-text-start"></ion-icon>
+				{{'upload_photo' | translate}}
+			</h3>
+		</div>
+	</div>
+	<div class="form">
+		<h2>{{'profile_info' | translate}}</h2>
+		<ion-list lines="none">
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">{{'full_name' | translate}}</ion-label>
+				<ion-input mode="md" type="name" value="Geroge Anderson"></ion-input>
+			</ion-item>
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">{{'phone_number' | translate}}</ion-label>
+				<ion-input mode="md" type="name" value="+1 987 654 3210"></ion-input>
+			</ion-item>
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">{{'gender' | translate}}</ion-label>
+				<ion-select interface="popover" [(ngModel)]="gender">
+					<ion-select-option value="male">{{'male' | translate}}</ion-select-option>
+					<ion-select-option value="female">{{'female' | translate}}</ion-select-option>
+				</ion-select>
+			</ion-item>
+
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">{{'email_address' | translate}}</ion-label>
+				<ion-input mode="md" type="enail" value=deliveryman@mail.com></ion-input>
+			</ion-item>
+		</ion-list>
+	</div>
+
+	<div class="form documentation">
+		<h2>{{'documentation' | translate}}</h2>
+		<ion-list lines="none">
+			<ion-item class="active">
+				<div class="item_inner d-flex">
+					<ion-icon class="zmdi zmdi-shield-check ion-text-start"></ion-icon>
+					<div class="text_box">
+						<h3>{{'goverment_id' | translate}}</h3>
+						<h4 class="d-flex">
+							<span class="id_details">myvoterid.jpg</span>
+							<span class="end ion-text-end">{{'upload' | translate}}</span>
+						</h4>
+					</div>
+				</div>
+			</ion-item>	
+			
+			<ion-item>
+				<div class="item_inner d-flex">
+					<ion-icon class="zmdi zmdi-assignment-alert ion-text-start"></ion-icon>
+					<div class="text_box">
+						<h3>{{'goverment_id' | translate}}</h3>
+						<h4 class="d-flex">
+							<span class="id_details">{{'not_uploaded_yet' | translate}}</span>
+							<span class="end ion-text-end">{{'upload' | translate}}</span>
+						</h4>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn">{{'update_info' | translate}}</ion-button>
+</ion-footer>

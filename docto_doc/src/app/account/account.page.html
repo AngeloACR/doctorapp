@@ -1,0 +1,70 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>{{'account' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<ion-list lines="none">
+
+		<ion-item class="profile">
+			<div class="item_inner d-flex">
+				<div class="img_box center_img">
+					<img src="assets/images/doc4.png" class="crop_img">
+				</div>
+				<div class="text_box">
+					<h2>Dr. Joseph Williamson</h2>
+					<p>Appolo Hospital</p>
+				</div>
+			</div>
+		</ion-item>
+
+		<ion-item class="track_order" (click)="my_profile()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-assignment-account ion-text-start"></ion-icon>
+				<h2>{{'edit_profile' | translate}}</h2>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="change_language()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-globe ion-text-start"></ion-icon>
+				<h2>{{'change_language' | translate}}</h2>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="contact_us()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+				<h2>{{'contact_us' | translate}}</h2>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="terms_conditions()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-bike ion-text-start"></ion-icon>
+				<h2>{{'terms_conditions' | translate}}</h2>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="faqs()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-assignment-alert ion-text-start"></ion-icon>
+				<h2>{{'faqs' | translate}}</h2>
+			</div>
+		</ion-item>
+
+		<ion-item (click)="logout()">
+			<div class="item_inner d-flex">
+				<ion-icon class="zmdi zmdi-open-in-new ion-text-start"></ion-icon>
+				<h2>{{'logout' | translate}}</h2>
+			</div>
+		</ion-item>
+	</ion-list>
+	<div *ngIf="config.showBuyPromt" (click)="buyAppAction()" class="buy_this_app">
+		<h2>
+			<ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>
+			{{"buy_this_app" | translate}}
+		</h2>
+	</div>
+</ion-content>

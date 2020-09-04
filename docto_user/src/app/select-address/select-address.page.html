@@ -1,0 +1,93 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'select_address' | translate}}</ion-title>
+	</ion-toolbar>
+
+	<ion-row class="order-steps">
+		<ion-col size="4" class="done ion-text-center">
+			<ion-icon class="zmdi zmdi-mall"></ion-icon>
+		</ion-col>
+		<ion-col size="4" class="ion-text-center">
+			<ion-icon class="zmdi zmdi-card"></ion-icon>
+		</ion-col>
+		<ion-col size="4" class=" ion-text-center">
+			<ion-icon class="zmdi zmdi-assignment-check"></ion-icon>
+		</ion-col>
+	</ion-row>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="form">
+		<ion-list lines="none">
+			<ion-radio-group>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="home"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_home.png">
+								<img src="assets/images/ic_home_active.png">
+							</div>
+							<h2>Home</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="office"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_office.png">
+								<img src="assets/images/ic_office_active.png">
+							</div>
+							<h2>Office</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-radio slot="start" value="Other"></ion-radio>
+					<ion-label class="d-flex">
+						<div class="img_container">
+							<div class="img_box">
+								<img src="assets/images/ic_location.png">
+								<img src="assets/images/ic_location_active.png">
+							</div>
+							<h2>Other</h2>
+						</div>
+						<p>
+							14134, Silver Green Street <br> 2nd Avenue, Hemiltone, <br> New York, USA
+						</p>
+					</ion-label>
+				</ion-item>
+			</ion-radio-group>
+
+			<ion-button size="large" shape="block" class="btn" (click)="add_new()">
+				<ion-icon class="zmdi zmdi-plus"></ion-icon> &nbsp;
+				{{'add_new_location' | translate}}
+			</ion-button>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<div class="amount_payable">
+		<h2 class="d-flex">
+			{{'amount_payable' | translate}}
+			<ion-icon class="zmdi zmdi-alert-circle-o"></ion-icon>
+			<span class="end">$30.40</span>
+		</h2>
+	</div>
+	<ion-button size="large" shape="full" class="btn" (click)="select_paymet_method()">
+		{{'proceed_to_payment' | translate}}
+		<ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+	</ion-button>
+</ion-footer>

@@ -1,0 +1,83 @@
+ion-header {
+	.doctor_info {
+		background: var(--primary);
+		padding: 18px 18px;
+
+		.img_box {
+			min-width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			margin-right: 14px;
+		}
+
+		.text_box {
+			color: var(--white);
+			width: 100%;
+			padding-bottom: 4px;
+
+			h2 {
+				margin: auto;
+				font-weight: 400;
+				font-size: 1.1rem;
+				padding-bottom: 4px;
+			}
+
+			h3 {
+				margin: 0;
+				font-size: .7rem;
+				font-weight: 400;
+				letter-spacing: .4px;
+			}
+		}
+	}
+}
+
+.form {
+	width: 100%;
+
+	ion-list {
+
+		ion-card {
+			margin: 0;
+			width: 100%;
+			box-shadow: none;
+			border-radius: 0;
+			padding: 22px 20px;
+			background: var(--white);
+			margin-bottom: 8px;
+
+			h2 {
+				color: #000;
+				margin: 0;
+				font-size: .9rem;
+				margin-bottom:18px;
+			}
+			.icon_box{
+				ion-icon{
+					color: #dddddd;
+					font-size: 1.95rem;
+					&.active{
+						color: var(--secondary);
+					}
+				}
+			}
+
+			ion-item {
+
+				&.item-has-placeholder {
+					--min-height: 40px;
+					margin-bottom: 0;
+					background: var(--bg-color) !important;
+
+					ion-textarea,
+					ion-input {
+						--placeholder-opacity: .6;
+						font-size: 1rem !important;
+					}
+
+				}
+			}
+
+		}
+	}
+}

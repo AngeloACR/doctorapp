@@ -1,0 +1,74 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'appointment_detail' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+	<ion-card>
+		<div class="doctor_details d-flex">
+			<div class="img_box center_img">
+				<img src="assets/images/doc4.png" class="crop_img">
+			</div>
+			<div class="text_box">
+				<h2 class="d-flex">
+					<span class="name">Dr. Joseph Williamson</span>
+					<span class="end cancel ion-text-end">{{'cancel' | translate}}</span>
+				</h2>
+				<h3>Cadiac Surgeon</h3>
+			</div>
+		</div>
+
+		<div class="appointment_detail">
+			<div class="detail_box d-flex">
+				<ion-icon class="zmdi zmdi-calendar-alt ion-text-end"></ion-icon>
+				<div class="text_box">
+					<h2>{{'appointment_date_time' | translate}}</h2>
+					<h3>12 March, 12:00 noon</h3>
+					<h4>in 3 days</h4>
+				</div>
+				<h5 class="end ion-text-end">{{'reschedule' | translate}}</h5>
+			</div>
+
+			<div class="detail_box d-flex">
+				<ion-icon class="zmdi zmdi-pin ion-text-end"></ion-icon>
+				<div class="text_box">
+					<h2>{{'location' | translate}}</h2>
+					<h3>At Apple Hospital</h3>
+					<h4>Walter street, Wallington, New York.</h4>
+				</div>
+			</div>
+		</div>
+	</ion-card>
+
+	<ion-card>
+		<div class="appointment_detail">
+			<div class="detail_box d-flex">
+				<ion-icon class="zmdi zmdi-assignment-check ion-text-end"></ion-icon>
+				<div class="text_box">
+					<h2>{{'appointment_booked_for' | translate}}</h2>
+					<h3>Emmili Johnson</h3>
+					<h4>+1 987 654 3210</h4>
+				</div>
+			</div>
+
+			<div class="detail_box d-flex">
+				<ion-icon class="zmdi zmdi-info ion-text-end"></ion-icon>
+				<div class="text_box">
+					<h2>{{'appointment_number' | translate}}</h2>
+					<h3>6654172</h3>
+					<h4>Just for reference purpose</h4>
+				</div>
+			</div>
+		</div>
+	</ion-card>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn">
+		<ion-icon slot="start" class="zmdi zmdi-navigation"></ion-icon>
+		{{'get_direction' | translate}}
+	</ion-button>
+</ion-footer>

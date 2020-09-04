@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text=""  icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'give_feedback' | translate}}</ion-title>
+	</ion-toolbar>
+	<div class="doctor_info d-flex">
+		<div class="img_box center_img">
+			<img src="assets/images/doc4.png" class="crop_img">
+		</div>
+		<div class="text_box">
+			<h2>Dr. Joseph Williamson</h2>
+			<h3>Cardiac Surgeon At Apple Hospital,</h3>
+		</div>
+	</div>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="form">
+		<ion-list lines="none">
+			<ion-card>
+				<h2>{{'overall_experience_with_doctor' | translate}}</h2>
+				<div class="icon_box">
+					<ion-icon class="zmdi zmdi-star"></ion-icon>
+					<ion-icon class="zmdi zmdi-star"></ion-icon>
+					<ion-icon class="zmdi zmdi-star"></ion-icon>
+					<ion-icon class="zmdi zmdi-star"></ion-icon>
+					<ion-icon class="zmdi zmdi-star"></ion-icon>
+				</div>
+			</ion-card>
+
+
+			<ion-card>
+				<h2>{{'visited_doctor_for' | translate}}</h2>
+				<ion-item lines="none">
+					<ion-input class="ion-text-start" type="name" value="" placeholder="{{'eg_heart_pain' | translate}}"></ion-input>
+				</ion-item>
+			</ion-card>
+			
+			<ion-card>
+				<h2>{{'how_was_you_experience' | translate}}</h2>
+				<ion-item lines="none">
+					<ion-textarea class="ion-text-start" rows="6" type="name" value="" placeholder="{{'write_your_experience' | translate}}"></ion-textarea>
+				</ion-item>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="tabs()">{{'submit_feedback' | translate}}</ion-button>
+</ion-footer>

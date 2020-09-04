@@ -1,0 +1,269 @@
+ion-header {
+	background: var(--white);
+
+	ion-toolbar {
+		position: absolute;
+		left: 0;
+		z-index: 999;
+		width: 100%;
+
+	}
+
+	.banner {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 276px;
+
+		.banner_img {
+			width: 100%;
+			height: 220px;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.banner_details {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+
+			.doctor_details {
+				padding: 11px 23px;
+
+				.img_box {
+					min-width: 87px;
+					width: 87px;
+					height: 87px;
+					margin-right: 15px;
+					border-radius: 50%;
+				}
+
+				.text_box {
+					width: 100%;
+
+					h2 {
+						color: var(--white);
+						margin: 0;
+						font-size: .9rem;
+						font-weight: 400;
+						margin-bottom: 28px;
+						letter-spacing: .5px;
+
+						ion-icon {
+							background: var(--primary);
+							min-width: 27px;
+							height: 27px;
+							line-height: 27px;
+							text-align: center;
+							margin-right: 10px;
+							border-radius: 50%;
+							font-size: 1rem;
+							color: var(--white);
+						}
+
+						&.profile_image {
+							color: var(--primary);
+							font-weight: 500;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ion-list {
+	padding: 0;
+	background: var(--transparent) !important;
+	margin: 0;
+	padding: 0;
+
+	ion-card {
+		margin: 0;
+		width: 100%;
+		margin-bottom: 8px;
+		border-radius: 0;
+		padding: 17px 17px 13px 17px;
+		box-shadow: 0px 4px 5px -3px rgba(230, 230, 230, 1);
+
+		h2 {
+			margin: 0;
+			color: var(--primary);
+			font-weight: 500;
+			font-size: .9rem;
+			padding-bottom: 18px;
+
+			span {
+				&.end {
+					font-weight: 500;
+					font-size: .95rem;
+					letter-spacing: .5px;
+				}
+			}
+		}
+
+		.form {
+			width: 100%;
+			padding-top: 14px;
+		}
+
+		&.experience_fees,
+		&.select_hospital {
+			.form {
+				padding-top: 0px;
+
+				ion-item {
+					h3 {
+						margin: 0;
+						font-size: 1.1rem !important;
+						font-weight: 500 !important;
+						color: var(--text-black);
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+				}
+			}
+
+		}
+
+		&.services {
+			.text_container {
+				height: 182px;
+				overflow: hidden;
+			}
+
+			h3 {
+				margin: 0;
+				color: var(--text-black);
+				font-size: 1rem;
+				padding-bottom: 11px;
+
+				ion-icon {
+					font-size: .9rem;
+					min-width: 25px;
+					color: var(--text-dark);
+				}
+
+				&.see_more {
+					display: flex;
+					align-items: center;
+
+					span {
+						display: block;
+						color: var(--primary);
+
+						&:nth-child(odd) {
+							display: none;
+						}
+					}
+				}
+			}
+
+			&.active {
+				.text_container {
+					height: auto;
+				}
+
+				h3 {
+					&.see_more {
+						span {
+							&:nth-child(odd) {
+								display: block;
+							}
+
+							&:nth-child(even) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.availibilty {
+			ion-row {
+				align-items: center;
+
+				ion-col {
+					padding: 0;
+					padding-bottom: 10px;
+
+					.day {
+						ion-item {
+							min-height: unset !important;
+							box-shadow: none !important;
+							--background: var(--transparent);
+							--inner-padding-end: 0px;
+							--inner-min-height: unset !important;
+							--min-height: unset !important;
+							--padding-start: 0;
+
+							ion-checkbox {
+								margin: 0;
+								margin-right: 14px;
+								--background-checked: var(--primary);
+								--border-color-checked: var(--primary);
+								--size: 17px;
+							}
+
+							h3 {
+								margin: 0;
+								color: var(--text-light);
+								font-size: 1.1rem;
+							}
+						}
+
+					}
+
+					.time_box {
+						width: 100%;
+						overflow: hidden;
+
+						.time {
+							border-radius: 6px;
+							padding: 2px 7px;
+							width: calc(100% - 0px);
+							background: var(--bg-color);
+							border: 1px solid rgba(204, 204, 204, 0.6) !important;
+							min-height: 40px;
+
+
+							ion-datetime {
+								--padding-end: 0;
+								--padding-bottom: 0;
+								--padding-start: 0;
+								--padding-top: 0;
+								font-size: 1.1rem !important;
+								font-weight: 500 !important;
+								color: var(--text-black);
+
+							}
+
+							ion-icon {
+								color: var(--text-black);
+								font-size: 1.5rem;
+								min-width: 20px;
+							}
+						}
+
+						h4 {
+							margin: 0;
+							color: var(--text-light);
+							font-size: 1rem;
+							min-width: 36px;
+							text-align: center;
+						}
+
+					}
+				}
+			}
+		}
+
+	}
+}
