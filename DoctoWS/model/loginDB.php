@@ -25,23 +25,18 @@ class loginDB {
     } 
     
     
-    /**
-     * verifica si un ID existe
-     * @param string $username nombre usuario unico de registro
-     * @return Bool TRUE|FALSE
-     */
-    public function verificarUsuario($username=''){
-        $sql = "SELECT count(*) as existe FROM ".db.".usuariodoctorweb WHERE Login_usuario = '".$username."';";
+    public function verificarUsuario($celular=''){
+       
+        $sql = "SELECT COUNT(*) AS existe FROM ".db.".UsuarioDoctorWeb WHERE Numero_celular = '".$celular."';";
+                
         try {
             $dbCon = getConnection();
             $stmt = $dbCon->query($sql);
-            $row = $stmt->fetch();
-               
+            $row = $stmt->fetch();            
             
-            //echo $stmt->queryString;
-            //echo $row['existe'];
+           
             
-            if($row['existe']==1){ //Evalúas $data directamente
+            if($row['existe']==1){ 
                 $dbCon = null;
                 return true;
             } else {
@@ -52,35 +47,27 @@ class loginDB {
             return false;
         }
     }
+   
     
-    /**
-     * obtiene un solo registro dado su ID
-     * @param int $id identificador unico de registro
-     * @return Array array con los registros obtenidos de la base de datos
-     */
-    
-    function getAutenticacionUsuario($username='',$clave='') {
-        if ($this->verificarUsuario($username)){
+    function getAutenticacionUsuario($correo_electronico='', $celular ='', $clave='') {
+        if ($this->verificarUsuario($celular)){
             
             //Encripta la clave con mi funcion PHP - para comparar con el valor encriptado en la tabla
             $crypto = new password_encrypt();
-            //$clave_encrypt = $crypto->encriptar($clave);
-            
-            
-            $clave_encrypt = $clave;
-            $sql = " SELECT usr.id_Usuario, usr.Login_usuario, usr.Correo_electronico, usr.Numero_celular, per.Nombres, per.Apellidos, per.Identificacion_persona ".
-                   " FROM usuariodoctorweb usr ".
-                           " LEFT JOIN persona per ".
-	                     " ON usr.Codigo_persona = per.Codigo_persona ".
-                   " WHERE usr.Login_usuario='".$username."' AND  usr.clave_usuario='".$clave_encrypt."' AND usr.Estado_usuario = 1;";
-            
-            
            
+            
+            $sql =" SELECT a.id_Usuario, a.Login_usuario, a.Correo_electronico, a.Numero_celular, a.Login_usuario, b.Nombres, b.Apellidos " .
+                    " FROM ".db.".UsuarioDoctorWeb a " .
+                    " INNER JOIN ".db.".Persona b " .
+                        " ON a.Codigo_persona = b.Codigo_persona " .
+                    " WHERE a.Numero_celular= '".$celular."' AND a.Correo_electronico = '".$correo_electronico."' AND a.Clave_usuario = MD5('".$clave."') AND Estado_usuario =1;";
+            
+                       
             try {
                 $dbCon = getConnection();
                 $stmt = $dbCon->query($sql);  
                 
-                //$stmt->execute();
+              
                 
                 $user = $stmt->fetch();  
                 
@@ -92,7 +79,7 @@ class loginDB {
                     $usuario["Numero_celular"]=utf8_encode($user['Numero_celular']);
                     $usuario["Nombres"]=utf8_encode($user['Nombres']);
                     $usuario["Apellidos"]=utf8_encode('Apellidos');                    
-                    $usuario["Identificacion_persona"]=utf8_encode($user['Identificacion_persona']);                  
+                    $usuario["Codigo_persona"]=utf8_encode($user['Codigo_persona']);                  
 
                     return json_encode($usuario,JSON_PRETTY_PRINT); 
                 } else {

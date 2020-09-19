@@ -75,18 +75,20 @@ class loginControl {
         //descodifica el foramtoJSON y lo pasa a array
         $datosPeticion = (array)$handler->decodeJson($json);
         
-        if (isset($datosPeticion['userName'], $datosPeticion['password'])) {  
-            //el constructor del padre ya se encarga de sanear los datos de entrada  
-            $username = $datosPeticion['userName']; 
-            $clave = decrypt(API_ENCRIPT_KEY,$datosPeticion['password']);  
+        if (isset($datosPeticion['Numero_celular'], $datosPeticion['Correo_electronico'],  $datosPeticion['Clave_usuario'])) {  
+           
+           
+            $correo_electronico = $datosPeticion['Correo_electronico']; 
+            $celular = $datosPeticion['Numero_celular']; 
+            $clave = $datosPeticion['Clave_usuario'];  
             
-            if (!empty($username) and !empty($clave)) {  
-                //if (filter_var($username, FILTER_VALIDATE_EMAIL)) {  
+            if (!empty($celular) and !empty($clave)) {  
+               
                     $loginDB = new LoginDB();    
-                    //$this->mostrarRespuesta($this->convertirJson($respuesta), 200);  
-                    $responseUsuario = $loginDB->getAutenticacionUsuario($username, $clave);
+                   
+                    $responseUsuario = $loginDB->getAutenticacionUsuario($correo_electronico , $celular,  $clave);
                     
-                    //echo $responseUsuario;
+                    
                     $datosRespuesta = (array)$handler->decodeJson($responseUsuario);
                     
                     if (!isset($datosRespuesta["error"])){
@@ -95,8 +97,7 @@ class loginControl {
                         $responseInicioSesion["error"] = "false";
                         $responseInicioSesion["status"] = "OK";
                         $responseInicioSesion["message"] = "SUCCESS";
-                        $responseInicioSesion['fecha'] = ObtenerFecha(); //Obtiene la fecha actual
-                        //Aqui se implementa el manejo del token
+                        $responseInicioSesion['fecha'] = ObtenerFecha();
                         $responseInicioSesion['token'] = $token->generateToken($datosRespuesta['id_Usuario'], $datosRespuesta['Login_usuario']);
                         $responseInicioSesion["respuesta"] = $datosRespuesta;
                         
