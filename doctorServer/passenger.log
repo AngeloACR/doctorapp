@@ -1,0 +1,32 @@
+App 27034 output: /home/admsamav/samaServer/users/routes/users.js:9
+App 27034 output: userRouter.post('/', async (req, res) => {
+App 27034 output:                            ^
+App 27034 output: 
+App 27034 output: SyntaxError: Unexpected token (
+App 27034 output:     at createScript (vm.js:56:10)
+App 27034 output:     at Object.runInThisContext (vm.js:97:10)
+App 27034 output:     at Object.vm.runInThisContext (/opt/passenger-5.3.7-8.el7.cloudlinux/src/helper-scripts/node-loader.js:117:19)
+App 27034 output:     at Module._compile (module.js:549:28)
+App 27034 output:     at Object.Module._extensions..js (module.js:586:10)
+App 27034 output:     at Module.load (module.js:494:32)
+App 27034 output:     at tryModuleLoad (module.js:453:12)
+App 27034 output:     at Function.Module._load (module.js:445:3)
+App 27034 output:     at Module.require (module.js:504:17)
+App 27034 output:     at Module.require (/opt/passenger-5.3.7-8.el7.cloudlinux/src/helper-scripts/node-loader.js:80:25)
+App 27134 output: Server running at: 3400
+App 25507 output: Server running at: 3400
+App 25642 output: /home/admsamav/samaServer/users/routes/users.js:9
+App 25642 output: userRouter.post('/', async (req, res) => {
+App 25642 output:                            ^
+App 25642 output: 
+App 25642 output: SyntaxError: Unexpected token (
+App 25642 output:     at createScript (vm.js:56:10)
+App 25642 output:     at Object.runInThisContext (vm.js:97:10)
+App 25642 output:     at Object.vm.runInThisContext (/opt/passenger-5.3.7-8.el7.cloudlinux/src/helper-scripts/node-loader.js:117:19)
+App 25642 output:     at Module._compile (module.js:549:28)
+App 25642 output:     at Object.Module._extensions..js (module.js:586:10)
+App 25642 output:     at Module.load (module.js:494:32)
+App 25642 output:     at tryModuleLoad (module.js:453:12)
+App 25642 output:     at Function.Module._load (module.js:445:3)
+App 25642 output:     at Module.require (module.js:504:17)
+App 25642 output:     at Module.require (/opt/passenger-5.3.7-8.el7.cloudlinux/src/helper-scripts/node-loader.js:80:25)
