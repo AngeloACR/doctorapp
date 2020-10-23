@@ -1,7 +1,8 @@
 const db = require('./database');
-const webListener = require('./webListener');
-const localServer = require('./localServer');
+const landingServer = require('./landingServer');
+const userServer = require('./userServer');
 const path = require('path');
+
 /* 
 const webListenerPort = 4300;
 const webFolder = './public/samaFront';
@@ -22,21 +23,22 @@ webApp.listen(webListenerPort, () => {
     console.log('Web Listener running at: ' + webListenerPort);
 }); */
 
-const localPort = 3400;
-const localFolder = './public/samaApp';
-const localPath = localFolder + '/index.html';
-const localApp = localServer.init(localFolder, localPort);
+/* 
+const userFolder = './public/doctorApp';
+const userPath = userFolder + '/index.html'; */
+const userPort = 5540;
+const userApp = userServer.init(userFolder, userPort);
 
-localApp.get('/', (req, res) => {
+userApp.get('/', (req, res) => {
 	res.send('We are having some troubles, please come back in a while!');
 });
 
- 	//Pointing to angular app
-localApp.get('/*', (req,res) => {
-	var fileToSend = path.join(__dirname, localPath);
+//Pointing to angular app
+/* userApp.get('/*', (req, res) => {
+	var fileToSend = path.join(__dirname, userPath);
 	res.sendFile(fileToSend);
-});
+}); */
 
-localApp.listen(localPort, () => {
-    console.log('Server running at: ' + localPort);
+userApp.listen(userPort, () => {
+	console.log('Server running at: ' + userPort);
 });

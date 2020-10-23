@@ -1,0 +1,35 @@
+({
+  "name": "Super Admin Decolux",
+  "username": "invenAdmin",
+  "mail": "decoluxve@gmail.com",
+  "password": "$2y$12$LlKCpvE9fpHTv2F7YUHku.40eGcnOD9I6kTowrPXexhO4zv.4Fhv2",
+  "type": "SuperAdmin"
+},
+{
+  "name": "Vendedor 1",
+  "username": "vendedor",
+  "mail": "vendedor@gmail.com",
+  "password": "$2y$12$LlKCpvE9fpHTv2F7YUHku.40eGcnOD9I6kTowrPXexhO4zv.4Fhv2",
+  "type": "Vendedor"
+},
+{
+  "name": "Vendedor 2",
+  "username": "vendedor2",
+  "mail": "vendedor2@gmail.com",
+  "password": "$2y$12$LlKCpvE9fpHTv2F7YUHku.40eGcnOD9I6kTowrPXexhO4zv.4Fhv2",
+  "type": "Vendedor"
+},
+{
+  "name": "Administrador 1",
+  "username": "admin",
+  "mail": "admin@gmail.com",
+  "password": "$2y$12$LlKCpvE9fpHTv2F7YUHku.40eGcnOD9I6kTowrPXexhO4zv.4Fhv2",
+  "type": "Admin"
+},
+{
+  "name": "Administrador 2",
+  "username": "admin2",
+  "mail": "admin2@gmail.com",
+  "password": "$2y$12$LlKCpvE9fpHTv2F7YUHku.40eGcnOD9I6kTowrPXexhO4zv.4Fhv2",
+  "type": "Admin"
+})

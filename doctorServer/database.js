@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const config = require('./config/environment');
+const config = require('./old/config/environment');
 var util = require('util');
 
 //Database stuff
