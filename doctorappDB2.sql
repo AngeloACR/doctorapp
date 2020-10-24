@@ -464,6 +464,7 @@ CREATE TABLE `PerfilMedico` (
 
 CREATE TABLE `Persona` (
   `Codigo_persona` int(11) NOT NULL COMMENT ' Identificador unico de la persona',
+  `Codigo_usuario` int(11) NOT NULL COMMENT ' Identificador unico del usuario asociado a la persona persona',
   `Nombres` varchar(30) COLLATE latin1_spanish_ci NOT NULL COMMENT ' Nombres de la persona',
   `Apellidos` varchar(100) COLLATE latin1_spanish_ci NOT NULL COMMENT ' Apellidos de la persona',
   `Codigo_tipo_identificacion` int(11) NOT NULL COMMENT ' Tipo de identificacion Pasaporte, Cedula, RUC',
