@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import { MedicoService } from "../../services/medico/medico.service";
+
 @Component({
   selector: 'app-add-feedback',
   templateUrl: './add-feedback.page.html',
@@ -8,9 +10,12 @@ import { NavController } from '@ionic/angular';
 })
 export class AddFeedbackPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  perfilDoctor: any;
 
-  ngOnInit() {
+  constructor(private navCtrl: NavController, private medico: MedicoService) { }
+
+  async ngOnInit() {
+    this.perfilDoctor = await this.medico.getDoctorProfile();
   }
 
  tabs() {

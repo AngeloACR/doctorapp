@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UsuarioService } from "../../services/usuario/usuario.service";
+
 @Component({
   selector: 'app-addresses',
   templateUrl: './addresses.page.html',
@@ -8,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AddressesPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private usuario: UsuarioService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    
   }
 	
  add_new() {

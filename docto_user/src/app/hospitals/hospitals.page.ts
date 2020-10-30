@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
+
+import { HospitalService } from "../../services/hospital/hospital.service";
 
 @Component({
   selector: 'app-hospitals',
@@ -8,9 +10,16 @@ import { Router } from '@angular/router';
 })
 export class HospitalsPage implements OnInit {
 
-  constructor(private route: Router) { }
+  imgSlider: any;
+  hospitales: any;
+  imgHospitales: any;
 
-  ngOnInit() {
+  constructor(private route: Router, private hospital: HospitalService) { }
+
+  async ngOnInit() {
+    this.imgSlider = await this.hospital.getSliderHospitales();
+    this.hospitales = await this.hospital.getHospitales();
+    this.imgHospitales = await this.hospital.getImgHospitales();
   }
 
  hospital_info() {

@@ -5,13 +5,13 @@
 		</ion-buttons>
 		<ion-title>{{'select_date_time' | translate}}</ion-title>
 	</ion-toolbar>
-	<div class="doctor_info d-flex">
+	<div class="doctor_info d-flex" *ngFor="let doctor of doctorProfile">
 		<div class="img_box center_img">
-			<img src="assets/images/doc4.png" class="crop_img">
+			<img [src]="doctor.imagenLittle" class="crop_img">
 		</div>
 		<div class="text_box">
-			<h2>Dr. Joseph Williamson</h2>
-			<h3>Cardiac Surgeon At Apple Hospital,</h3>
+			<h2>{{doctor.nombre}}</h2>
+			<h3>{{doctor.especialidad}},</h3>
 		</div>
 	</div>
 	<div class="date_container ion-text-center">

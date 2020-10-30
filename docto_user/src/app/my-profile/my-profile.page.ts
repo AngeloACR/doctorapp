@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UsuarioService } from "../../services/usuario/usuario.service";
+
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.page.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfilePage implements OnInit {
 
-  constructor() { }
+  perfilUsuarios: any;
 
-  ngOnInit() {
+  constructor(private usuario: UsuarioService) { }
+
+  async ngOnInit() {
+    this.perfilUsuarios = await this.usuario.getPerfilUsuarios();
   }
 
 }

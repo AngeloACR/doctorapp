@@ -8,7 +8,6 @@
 						Wallington
 					</h2>
 				</div>
-
 				<h3 class="page_title">{{'app_title' | translate}}</h3>
 			</div>
 		</ion-title>
@@ -16,19 +15,9 @@
 
 	<div class="banner">
 		<ion-slides pager="true" loop="true">
-			<ion-slide>
+			<ion-slide *ngFor="let slider of sliders">
 				<div class="img_box center_img">
-					<img src="assets/images/Slider1.png" class="crop_img">
-				</div>
-			</ion-slide>
-			<ion-slide>
-				<div class="img_box center_img">
-					<img src="assets/images/Slider.png" class="crop_img">
-				</div>
-			</ion-slide>
-			<ion-slide>
-				<div class="img_box center_img">
-					<img src="assets/images/Slider2.png" class="crop_img">
+					<img [src]="slider.imagen" class="crop_img">
 				</div>
 			</ion-slide>
 		</ion-slides>
@@ -40,77 +29,11 @@
 	</div>
 
 	<div class="scroll_container">
-		<div class="item_srcoll" (click)="list_of_doctors()">
+		<div class="item_srcoll" *ngFor="let tipo of tipos" (click)="list_of_doctors()">
 			<div class="icon_box">
-				<img src="assets/images/ic_doctors.png">
+				<img [src]="tipo.imagen">
 			</div>
-			<h2>{{'doctors' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_dentist.png">
-			</div>
-			<h2>{{'dentist' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_ayurvedic.png">
-			</div>
-			<h2>{{'ayurvedic' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_therapist.png">
-			</div>
-			<h2>{{'therapist' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_doctors.png">
-			</div>
-			<h2>{{'doctors' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_dentist.png">
-			</div>
-			<h2>{{'dentist' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_ayurvedic.png">
-			</div>
-			<h2>{{'ayurvedic' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_therapist.png">
-			</div>
-			<h2>{{'therapist' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_doctors.png">
-			</div>
-			<h2>{{'doctors' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_dentist.png">
-			</div>
-			<h2>{{'dentist' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_ayurvedic.png">
-			</div>
-			<h2>{{'ayurvedic' | translate}}</h2>
-		</div>
-		<div class="item_srcoll" (click)="list_of_doctors()">
-			<div class="icon_box">
-				<img src="assets/images/ic_therapist.png">
-			</div>
-			<h2>{{'therapist' | translate}}</h2>
+			<h2>{{tipo.titulo | translate}}</h2>
 		</div>
 	</div>
 </ion-header>
@@ -126,7 +49,5 @@
 				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
 			</h4>
 		</ion-item>
-
-
 	</ion-list>
 </ion-content>

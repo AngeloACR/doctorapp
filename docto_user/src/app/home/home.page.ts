@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MedicamentosService } from "../../services/medicamentos/medicamentos.service";
+
 @Component({
-  selector: 'app-home',
+  selector: 'app-home', 
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
 
-  constructor( private route: Router) { }
+  imgSlider: any;
+  categoriamedicamentos: any;
 
-  ngOnInit() {
+  constructor( private route: Router, private medicamentos: MedicamentosService) { }
+
+  async ngOnInit() {
+    this.imgSlider = await this.medicamentos.getSliderMedicamentos();
+    this.categoriamedicamentos = await this.medicamentos.getCategoriaMedicamentos();
   }
 	
  categories() {

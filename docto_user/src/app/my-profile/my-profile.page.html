@@ -9,25 +9,25 @@
 
 
 <ion-content>
-	<div class="form">
+	<div class="form" *ngFor="let perfil of perfilUsuarios">
 		<div class="img_container">
 			<div class="img_box center_img">
-				<img src="assets/images/my_profile.png" class="crop_img">
+				<img [src]="perfil.imagenPerfil" class="crop_img">
 			</div>
 			<ion-icon class="zmdi zmdi-camera"></ion-icon>
 		</div>
-		<ion-list lines="none">
+		<ion-list lines="none" >
 			<ion-item lines="none">
 				<ion-label position="fixed">{{'phone_number' | translate}}</ion-label>
-				<ion-input class="ion-text-end" type="text" value="987 654 3210" readonly></ion-input>
+				<ion-input class="ion-text-end" type="text" [value]="perfil.telefono" readonly></ion-input>
 			</ion-item>
 			<ion-item lines="none">
 				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
-				<ion-input class="ion-text-end" type="name" value="Sam Smith" readonly></ion-input>
+				<ion-input class="ion-text-end" type="name" [value]="perfil.nombre" readonly></ion-input>
 			</ion-item>
 			<ion-item lines="none">
 				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>
-				<ion-input class="ion-text-end" type="name" value="samsmith@mail.com" readonly></ion-input>
+				<ion-input class="ion-text-end" type="name" [value]="perfil.correo" readonly></ion-input>
 			</ion-item> 
 		</ion-list>
 	</div>

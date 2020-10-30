@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { HospitalService } from "../../services/hospital/hospital.service";
+import { MedicoService } from "../../services/medico/medico.service";
+
 @Component({
   selector: 'app-hospital-info',
   templateUrl: './hospital-info.page.html',
@@ -21,10 +24,24 @@ export class HospitalInfoPage implements OnInit {
    faqExpand10: boolean;	
    faqExpand11: boolean;	
    faqExpand12: boolean;	
-  constructor(private route: Router) { }
 
-  ngOnInit() {
+
+  infoHospital: any;
+  departamentos: any;
+  horarios: any;
+  direcciones: any;
+  doctores: any;
+
+  constructor(private route: Router, private hospital: HospitalService, private medico: MedicoService) { }
+
+  async ngOnInit() {
+    this.infoHospital = await this.hospital.getInfoHospital();
+    this.departamentos = await this.hospital.getDepartamentosHospital();
+    this.horarios = await this.hospital.gethoraHospital();
+    this.direcciones = await this.hospital.getDireccionHospital();
+    this.doctores = await this.medico.getDoctores();
   }
+
 toggleSaveIcon1() {
     this.favorite_icon = !this.favorite_icon;
   }
