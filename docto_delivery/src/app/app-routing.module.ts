@@ -1,81 +1,114 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { SplashComponent } from "./splash/splash.component";
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'sign-in',   pathMatch: 'full'
+    path: "",
+    redirectTo: "sign-in",
+    pathMatch: "full"
   },
   {
-    path: 'sign-in',
-    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+    path: "sign-in",
+    loadChildren: () =>
+      import("./sign-in/sign-in.module").then(m => m.SignInPageModule)
   },
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    path: "splash",
+    component: SplashComponent
   },
   {
-    path: 'tnc',
-    loadChildren: () => import('./tnc/tnc.module').then( m => m.TncPageModule)
+    path: "register",
+    loadChildren: () =>
+      import("./register/register.module").then(m => m.RegisterPageModule)
   },
   {
-    path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+    path: "tnc",
+    loadChildren: () => import("./tnc/tnc.module").then(m => m.TncPageModule)
   },
   {
-    path: 'contact-us',
-    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+    path: "faq",
+    loadChildren: () => import("./faq/faq.module").then(m => m.FaqPageModule)
   },
   {
-    path: 'verification',
-    loadChildren: () => import('./verification/verification.module').then( m => m.VerificationPageModule)
+    path: "contact-us",
+    loadChildren: () =>
+      import("./contact-us/contact-us.module").then(m => m.ContactUsPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "verification",
+    loadChildren: () =>
+      import("./verification/verification.module").then(
+        m => m.VerificationPageModule
+      )
   },
   {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+    path: "home",
+    loadChildren: () => import("./home/home.module").then(m => m.HomePageModule)
   },
   {
-    path: 'delivered-succesfully',
-    loadChildren: () => import('./delivered-succesfully/delivered-succesfully.module').then( m => m.DeliveredSuccesfullyPageModule)
+    path: "chat",
+    loadChildren: () => import("./chat/chat.module").then(m => m.ChatPageModule)
   },
   {
-    path: 'wallet',
-    loadChildren: () => import('./wallet/wallet.module').then( m => m.WalletPageModule)
+    path: "delivered-succesfully",
+    loadChildren: () =>
+      import("./delivered-succesfully/delivered-succesfully.module").then(
+        m => m.DeliveredSuccesfullyPageModule
+      )
   },
   {
-    path: 'send-to-bank',
-    loadChildren: () => import('./send-to-bank/send-to-bank.module').then( m => m.SendToBankPageModule)
+    path: "wallet",
+    loadChildren: () =>
+      import("./wallet/wallet.module").then(m => m.WalletPageModule)
   },
   {
-    path: 'order-history',
-    loadChildren: () => import('./order-history/order-history.module').then( m => m.OrderHistoryPageModule)
+    path: "send-to-bank",
+    loadChildren: () =>
+      import("./send-to-bank/send-to-bank.module").then(
+        m => m.SendToBankPageModule
+      )
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    path: "order-history",
+    loadChildren: () =>
+      import("./order-history/order-history.module").then(
+        m => m.OrderHistoryPageModule
+      )
   },
   {
-    path: 'insight',
-    loadChildren: () => import('./insight/insight.module').then( m => m.InsightPageModule)
+    path: "profile",
+    loadChildren: () =>
+      import("./profile/profile.module").then(m => m.ProfilePageModule)
   },
   {
-    path: 'offline',
-    loadChildren: () => import('./offline/offline.module').then( m => m.OfflinePageModule)
+    path: "insight",
+    loadChildren: () =>
+      import("./insight/insight.module").then(m => m.InsightPageModule)
   },
   {
-    path: 'new-delivery',
-    loadChildren: () => import('./new-delivery/new-delivery.module').then( m => m.NewDeliveryPageModule)
+    path: "offline",
+    loadChildren: () =>
+      import("./offline/offline.module").then(m => m.OfflinePageModule)
   },
   {
-    path: 'accepted',
-    loadChildren: () => import('./accepted/accepted.module').then( m => m.AcceptedPageModule)
+    path: "new-delivery",
+    loadChildren: () =>
+      import("./new-delivery/new-delivery.module").then(
+        m => m.NewDeliveryPageModule
+      )
   },
   {
-    path: 'change-language',
-    loadChildren: () => import('./change-language/change-language.module').then( m => m.ChangeLanguagePageModule)
+    path: "accepted",
+    loadChildren: () =>
+      import("./accepted/accepted.module").then(m => m.AcceptedPageModule)
+  },
+  {
+    path: "change-language",
+    loadChildren: () =>
+      import("./change-language/change-language.module").then(
+        m => m.ChangeLanguagePageModule
+      )
   }
 ];
 

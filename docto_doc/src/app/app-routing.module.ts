@@ -1,77 +1,109 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { SplashComponent } from "./splash/splash.component";
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'sign-in',   pathMatch: 'full'
-  },	
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    path: "",
+    redirectTo: "sign-in",
+    pathMatch: "full"
   },
   {
-    path: 'sign-in',
-    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+    path: "",
+    loadChildren: () => import("./tabs/tabs.module").then(m => m.TabsPageModule)
   },
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    path: "splash",
+    component: SplashComponent
   },
   {
-    path: 'verification',
-    loadChildren: () => import('./verification/verification.module').then( m => m.VerificationPageModule)
-  }, 
-  {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+    path: "sign-in",
+    loadChildren: () =>
+      import("./sign-in/sign-in.module").then(m => m.SignInPageModule)
   },
   {
-    path: 'feedback',
-    loadChildren: () => import('./feedback/feedback.module').then( m => m.FeedbackPageModule)
+    path: "register",
+    loadChildren: () =>
+      import("./register/register.module").then(m => m.RegisterPageModule)
   },
   {
-    path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+    path: "verification",
+    loadChildren: () =>
+      import("./verification/verification.module").then(
+        m => m.VerificationPageModule
+      )
   },
   {
-    path: 'my-profile',
-    loadChildren: () => import('./my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+    path: "chat",
+    loadChildren: () => import("./chat/chat.module").then(m => m.ChatPageModule)
   },
   {
-    path: 'add-hospital',
-    loadChildren: () => import('./add-hospital/add-hospital.module').then( m => m.AddHospitalPageModule)
+    path: "feedback",
+    loadChildren: () =>
+      import("./feedback/feedback.module").then(m => m.FeedbackPageModule)
   },
   {
-    path: 'add-degre',
-    loadChildren: () => import('./add-degre/add-degre.module').then( m => m.AddDegrePageModule)
+    path: "account",
+    loadChildren: () =>
+      import("./account/account.module").then(m => m.AccountPageModule)
   },
   {
-    path: 'add-services',
-    loadChildren: () => import('./add-services/add-services.module').then( m => m.AddServicesPageModule)
+    path: "my-profile",
+    loadChildren: () =>
+      import("./my-profile/my-profile.module").then(m => m.MyProfilePageModule)
   },
   {
-    path: 'add-specializations',
-    loadChildren: () => import('./add-specializations/add-specializations.module').then( m => m.AddSpecializationsPageModule)
+    path: "add-hospital",
+    loadChildren: () =>
+      import("./add-hospital/add-hospital.module").then(
+        m => m.AddHospitalPageModule
+      )
   },
   {
-    path: 'contact-us',
-    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+    path: "add-degre",
+    loadChildren: () =>
+      import("./add-degre/add-degre.module").then(m => m.AddDegrePageModule)
   },
   {
-    path: 'faq',
-    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+    path: "add-services",
+    loadChildren: () =>
+      import("./add-services/add-services.module").then(
+        m => m.AddServicesPageModule
+      )
   },
   {
-    path: 'tnc',
-    loadChildren: () => import('./tnc/tnc.module').then( m => m.TncPageModule)
+    path: "add-specializations",
+    loadChildren: () =>
+      import("./add-specializations/add-specializations.module").then(
+        m => m.AddSpecializationsPageModule
+      )
   },
   {
-    path: 'appointments',
-    loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
+    path: "contact-us",
+    loadChildren: () =>
+      import("./contact-us/contact-us.module").then(m => m.ContactUsPageModule)
   },
   {
-    path: 'change-language',
-    loadChildren: () => import('./change-language/change-language.module').then( m => m.ChangeLanguagePageModule)
+    path: "faq",
+    loadChildren: () => import("./faq/faq.module").then(m => m.FaqPageModule)
+  },
+  {
+    path: "tnc",
+    loadChildren: () => import("./tnc/tnc.module").then(m => m.TncPageModule)
+  },
+  {
+    path: "appointments",
+    loadChildren: () =>
+      import("./appointments/appointments.module").then(
+        m => m.AppointmentsPageModule
+      )
+  },
+  {
+    path: "change-language",
+    loadChildren: () =>
+      import("./change-language/change-language.module").then(
+        m => m.ChangeLanguagePageModule
+      )
   }
 ];
 @NgModule({
