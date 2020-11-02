@@ -1,148 +1,216 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { SplashComponent } from "./splash/splash.component";
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'sign-in',
-    pathMatch: 'full'
-  },	
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    path: "",
+    redirectTo: "sign-in",
+    pathMatch: "full"
   },
   {
-    path: 'sign-in',
-    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+    path: "",
+    loadChildren: () => import("./tabs/tabs.module").then(m => m.TabsPageModule)
   },
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    path: "splash",
+    component: SplashComponent
   },
   {
-    path: 'verification',
-    loadChildren: () => import('./verification/verification.module').then( m => m.VerificationPageModule)
+    path: "sign-in",
+    loadChildren: () =>
+      import("./sign-in/sign-in.module").then(m => m.SignInPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "register",
+    loadChildren: () =>
+      import("./register/register.module").then(m => m.RegisterPageModule)
   },
   {
-    path: 'categories',
-    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+    path: "verification",
+    loadChildren: () =>
+      import("./verification/verification.module").then(
+        m => m.VerificationPageModule
+      )
   },
   {
-    path: 'product-list',
-    loadChildren: () => import('./product-list/product-list.module').then( m => m.ProductListPageModule)
+    path: "home",
+    loadChildren: () => import("./home/home.module").then(m => m.HomePageModule)
   },
   {
-    path: 'product-info',
-    loadChildren: () => import('./product-info/product-info.module').then( m => m.ProductInfoPageModule)
+    path: "categories",
+    loadChildren: () =>
+      import("./categories/categories.module").then(m => m.CategoriesPageModule)
   },
   {
-    path: 'my-cart',
-    loadChildren: () => import('./my-cart/my-cart.module').then( m => m.MyCartPageModule)
+    path: "product-list",
+    loadChildren: () =>
+      import("./product-list/product-list.module").then(
+        m => m.ProductListPageModule
+      )
   },
   {
-    path: 'select-address',
-    loadChildren: () => import('./select-address/select-address.module').then( m => m.SelectAddressPageModule)
+    path: "product-info",
+    loadChildren: () =>
+      import("./product-info/product-info.module").then(
+        m => m.ProductInfoPageModule
+      )
   },
   {
-    path: 'select-paymet-method',
-    loadChildren: () => import('./select-paymet-method/select-paymet-method.module').then( m => m.SelectPaymetMethodPageModule)
+    path: "my-cart",
+    loadChildren: () =>
+      import("./my-cart/my-cart.module").then(m => m.MyCartPageModule)
   },
   {
-    path: 'order-placed',
-    loadChildren: () => import('./order-placed/order-placed.module').then( m => m.OrderPlacedPageModule)
+    path: "select-address",
+    loadChildren: () =>
+      import("./select-address/select-address.module").then(
+        m => m.SelectAddressPageModule
+      )
   },
   {
-    path: 'doctors',
-    loadChildren: () => import('./doctors/doctors.module').then( m => m.DoctorsPageModule)
+    path: "select-paymet-method",
+    loadChildren: () =>
+      import("./select-paymet-method/select-paymet-method.module").then(
+        m => m.SelectPaymetMethodPageModule
+      )
   },
   {
-    path: 'specilities',
-    loadChildren: () => import('./specilities/specilities.module').then( m => m.SpecilitiesPageModule)
+    path: "order-placed",
+    loadChildren: () =>
+      import("./order-placed/order-placed.module").then(
+        m => m.OrderPlacedPageModule
+      )
   },
   {
-    path: 'list-of-doctors',
-    loadChildren: () => import('./list-of-doctors/list-of-doctors.module').then( m => m.ListOfDoctorsPageModule)
+    path: "doctors",
+    loadChildren: () =>
+      import("./doctors/doctors.module").then(m => m.DoctorsPageModule)
   },
   {
-    path: 'map-view',
-    loadChildren: () => import('./map-view/map-view.module').then( m => m.MapViewPageModule)
+    path: "specilities",
+    loadChildren: () =>
+      import("./specilities/specilities.module").then(
+        m => m.SpecilitiesPageModule
+      )
   },
   {
-    path: 'filter',
-    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+    path: "list-of-doctors",
+    loadChildren: () =>
+      import("./list-of-doctors/list-of-doctors.module").then(
+        m => m.ListOfDoctorsPageModule
+      )
   },
   {
-    path: 'doctor-profile',
-    loadChildren: () => import('./doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
+    path: "map-view",
+    loadChildren: () =>
+      import("./map-view/map-view.module").then(m => m.MapViewPageModule)
   },
   {
-    path: 'appointment-book',
-    loadChildren: () => import('./appointment-book/appointment-book.module').then( m => m.AppointmentBookPageModule)
+    path: "filter",
+    loadChildren: () =>
+      import("./filter/filter.module").then(m => m.FilterPageModule)
   },
   {
-    path: 'add-feedback',
-    loadChildren: () => import('./add-feedback/add-feedback.module').then( m => m.AddFeedbackPageModule)
+    path: "doctor-profile",
+    loadChildren: () =>
+      import("./doctor-profile/doctor-profile.module").then(
+        m => m.DoctorProfilePageModule
+      )
   },
   {
-    path: 'hospitals',
-    loadChildren: () => import('./hospitals/hospitals.module').then( m => m.HospitalsPageModule)
+    path: "appointment-book",
+    loadChildren: () =>
+      import("./appointment-book/appointment-book.module").then(
+        m => m.AppointmentBookPageModule
+      )
   },
   {
-    path: 'hospital-map-view',
-    loadChildren: () => import('./hospital-map-view/hospital-map-view.module').then( m => m.HospitalMapViewPageModule)
+    path: "add-feedback",
+    loadChildren: () =>
+      import("./add-feedback/add-feedback.module").then(
+        m => m.AddFeedbackPageModule
+      )
   },
   {
-    path: 'hospital-info',
-    loadChildren: () => import('./hospital-info/hospital-info.module').then( m => m.HospitalInfoPageModule)
+    path: "hospitals",
+    loadChildren: () =>
+      import("./hospitals/hospitals.module").then(m => m.HospitalsPageModule)
   },
   {
-    path: 'my-appointments',
-    loadChildren: () => import('./my-appointments/my-appointments.module').then( m => m.MyAppointmentsPageModule)
+    path: "hospital-map-view",
+    loadChildren: () =>
+      import("./hospital-map-view/hospital-map-view.module").then(
+        m => m.HospitalMapViewPageModule
+      )
   },
   {
-    path: 'appointment-detail',
-    loadChildren: () => import('./appointment-detail/appointment-detail.module').then( m => m.AppointmentDetailPageModule)
+    path: "hospital-info",
+    loadChildren: () =>
+      import("./hospital-info/hospital-info.module").then(
+        m => m.HospitalInfoPageModule
+      )
   },
   {
-    path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+    path: "my-appointments",
+    loadChildren: () =>
+      import("./my-appointments/my-appointments.module").then(
+        m => m.MyAppointmentsPageModule
+      )
   },
   {
-    path: 'my-profile',
-    loadChildren: () => import('./my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+    path: "appointment-detail",
+    loadChildren: () =>
+      import("./appointment-detail/appointment-detail.module").then(
+        m => m.AppointmentDetailPageModule
+      )
   },
   {
-    path: 'addresses',
-    loadChildren: () => import('./addresses/addresses.module').then( m => m.AddressesPageModule)
+    path: "account",
+    loadChildren: () =>
+      import("./account/account.module").then(m => m.AccountPageModule)
   },
   {
-    path: 'add-address',
-    loadChildren: () => import('./add-address/add-address.module').then( m => m.AddAddressPageModule)
+    path: "my-profile",
+    loadChildren: () =>
+      import("./my-profile/my-profile.module").then(m => m.MyProfilePageModule)
   },
   {
-    path: 'contact-us',
-    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+    path: "addresses",
+    loadChildren: () =>
+      import("./addresses/addresses.module").then(m => m.AddressesPageModule)
   },
   {
-    path: 'faqs',
-    loadChildren: () => import('./faqs/faqs.module').then( m => m.FaqsPageModule)
+    path: "add-address",
+    loadChildren: () =>
+      import("./add-address/add-address.module").then(
+        m => m.AddAddressPageModule
+      )
   },
   {
-    path: 'tnc',
-    loadChildren: () => import('./tnc/tnc.module').then( m => m.TncPageModule)
+    path: "contact-us",
+    loadChildren: () =>
+      import("./contact-us/contact-us.module").then(m => m.ContactUsPageModule)
   },
   {
-    path: 'title',
-    loadChildren: () => import('./title/title.module').then( m => m.TitlePageModule)
-  },  {
-    path: 'change-language',
-    loadChildren: () => import('./change-language/change-language.module').then( m => m.ChangeLanguagePageModule)
+    path: "faqs",
+    loadChildren: () => import("./faqs/faqs.module").then(m => m.FaqsPageModule)
+  },
+  {
+    path: "tnc",
+    loadChildren: () => import("./tnc/tnc.module").then(m => m.TncPageModule)
+  },
+  {
+    path: "title",
+    loadChildren: () =>
+      import("./title/title.module").then(m => m.TitlePageModule)
+  },
+  {
+    path: "change-language",
+    loadChildren: () =>
+      import("./change-language/change-language.module").then(
+        m => m.ChangeLanguagePageModule
+      )
   }
-
 ];
 @NgModule({
   imports: [
