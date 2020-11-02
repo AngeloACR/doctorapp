@@ -1,6 +1,6 @@
 <ion-header class="bg_transparent">
 	<ion-toolbar>
-		<ion-buttons slot="start">
+		<ion-buttons slot="start"> 
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title>
@@ -25,9 +25,9 @@
 		<div class="banner_img">
 			<img src="assets/images/hospital_img.png">
 		</div>
-		<div class="banner_details">
-			<h2>Apple Hospital</h2>
-			<h3>General Hospital</h3>
+		<div class="banner_details" *ngFor="let hospital of infoHospital">
+			<h2>{{hospital.nombre}}</h2>
+			<h3>{{hospital.especialidad}}</h3>
 		</div>
 		<ion-segment [(ngModel)]="tab" lines="none">
 			<ion-segment-button value="about">
@@ -51,151 +51,101 @@
 			<ion-card class="departments">
 				<h2>{{'departments' | translate}}</h2>
 				<ion-row>
-					<ion-col size="6">
+					<ion-col size="6" *ngFor="let departamento of departamentos">
 						<h3 class="d-flex">
 							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Hypertension Treatment
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Health Checkup (General)
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							COPD Treatment
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Fever Treatment
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Diabetes Management
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Non Interventional Cardiology
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							ECG
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Diabetology
-						</h3>
-					</ion-col>
-					<ion-col size="6">
-						<h3 class="d-flex">
-							<ion-icon class="zmdi zmdi-label-alt"></ion-icon>
-							Obesity Treatment
+							{{departamento.nombre}}
 						</h3>
 					</ion-col>
 				</ion-row>
 			</ion-card>
-
 
 			<ion-card class="available_timings">
 				<h2>{{'available_timings' | translate}}</h2>
 				<ion-row>
-					<ion-col size="6">
+					<ion-col size="6" *ngFor="let horario of horarios">
 						<h3 class="d-flex">
 							<span>Mon </span>
-							12:00 to 13:00
+							{{horario.lunes}}
 						</h3>
 						<h3 class="d-flex">
 							<span>Tue </span>
-							12:00 to 13:00
+							{{horario.martes}}
 						</h3>
 						<h3 class="d-flex">
 							<span>Wed </span>
-							12:00 to 13:00
+							{{horario.miercoles}}
 						</h3>
 						<h3 class="d-flex">
 							<span>Thu </span>
-							12:00 to 13:00
+							{{horario.jueves}}
 						</h3>
 					</ion-col>
-					<ion-col size="6">
+					<ion-col size="6" *ngFor="let horario of horarios">
 						<h3 class="d-flex">
 							<span>Fri </span>
-							Closed
+							{{horario.viernes}}
 						</h3>
 						<h3 class="d-flex">
 							<span>Sat </span>
-							11:00 to 12:00
+							{{horario.sabado}}
 						</h3>
 
 						<h3 class="d-flex">
 							<span>Sun </span>
-							Closed
+							{{horario.domingo}}
 						</h3>
 					</ion-col>
 				</ion-row>
 			</ion-card>
 
-			<ion-card class="address_box">
+			<ion-card class="address_box" *ngFor="let direccion of direcciones">
 				<div class="address">
 					<h2>{{'address' | translate}}</h2>
 					<div class="d-flex">
-						<h3> Batra & Sons Hospital
-							<span>JJ towers, Johnson street, Hemilton, Newyork</span>
+						<h3> {{direccion.principal}}
+							<span>{{direccion.direccion}}</span>
 						</h3>
 					</div>
 				</div>
 
 				<div class="map_box">
-					<img src="assets/images/map.png">
+					<img [src]="direccion.mapa">
 					<ion-icon class="zmdi zmdi-pin" style="top: 27%; left: 50%;"></ion-icon>
 				</div>
 			</ion-card>
 		</ion-list>
 		<!--About section end> -->
 
-
 		<!--Doctors section start> -->
 		<ion-list class="doctors_list" lines="none" *ngSwitchCase="'doctors'">
-			<ion-card [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
+			<ion-card [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()" *ngFor="let departamento of departamentos">
 				<div class="card_header">
 					<h2 class="d-flex">
-						<span class="card_title">Cardiolgy Department </span>
+						<span class="card_title">{{departamento.nombre}}</span>
 						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
 					</h2>
 				</div>
 				<div class="card_content">
-					<ion-item>
+					<ion-item *ngFor="let doctor of doctores">
 						<div class="item_inner">
 							<div class="item_header d-flex">
 								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
+									<img [src]="doctor.imagen" class="crop_img">
 								</div>
 								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
+									<h2>{{doctor.nombre}}</h2>
+									<h3>{{doctor.especialidad}}</h3>
 								</div>
 								<h4 (click)="book()">{{'book' | translate}}</h4>
 							</div>
 							<div class="item_content" (click)="doctor_profile()">
 								<ion-row>
 									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
+										<h2>{{'experience' | translate}}&nbsp;<strong>{{doctor.experiencia}}</strong></h2>
 									</ion-col>
 									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
+										<h2>{{'fees' | translate}}&nbsp;<strong>{{doctor.costo}}</strong></h2>
 									</ion-col>
 
 									<ion-col size="6" class="d-flex">
@@ -207,1013 +157,7 @@
 											<ion-icon class="zmdi zmdi-star active"></ion-icon>
 											<ion-icon class="zmdi zmdi-star"></ion-icon>
 											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-			<ion-card [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title">Neurology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title">Oncology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-
-			<ion-card [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Obstetrics Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Gynaecology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Colloquially Department</span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-			<ion-card [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title">Cardiolgy Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-			<ion-card [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title">Neurology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand9 ? 'active' : '' " (click)="faqExpandToggle9()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title">Oncology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-
-			<ion-card [ngClass]="faqExpand10 ? 'active' : '' " (click)="faqExpandToggle10()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Obstetrics Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand11 ? 'active' : '' " (click)="faqExpandToggle11()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Gynaecology Department </span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-				</div>
-			</ion-card>
-
-
-			<ion-card [ngClass]="faqExpand12 ? 'active' : '' " (click)="faqExpandToggle12()">
-				<div class="card_header">
-					<h2 class="d-flex">
-						<span class="card_title"> Colloquially Department</span>
-						<ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
-					</h2>
-				</div>
-				<div class="card_content">
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc4.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Joseph Williamoson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$30</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star"></ion-icon>
-											&nbsp;
-											(152)
-										</h2>
-									</ion-col>
-								</ion-row>
-							</div>
-						</div>
-					</ion-item>
-
-
-					<ion-item>
-						<div class="item_inner">
-							<div class="item_header d-flex">
-								<div class="img_box center_img" (click)="doctor_profile()">
-									<img src="assets/images/doc5.png" class="crop_img">
-								</div>
-								<div class="text_box" (click)="doctor_profile()">
-									<h2>Dr. Adom Johnson</h2>
-									<h3>Cardiac Surgeon</h3>
-								</div>
-								<h4 (click)="book()">{{'book' | translate}}</h4>
-							</div>
-							<div class="item_content" (click)="doctor_profile()">
-								<ion-row>
-									<ion-col size="4">
-										<h2>{{'experience' | translate}}&nbsp;<strong>18 years</strong></h2>
-									</ion-col>
-									<ion-col size="2">
-										<h2>{{'fees' | translate}}&nbsp;<strong>$28</strong></h2>
-									</ion-col>
-
-									<ion-col size="6" class="d-flex">
-										<h2 class="end">
-											{{'feedback' | translate}}&nbsp;
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											<ion-icon class="zmdi zmdi-star active"></ion-icon>
-											&nbsp;
-											(124)
+											{{doctor.votos}}
 										</h2>
 									</ion-col>
 								</ion-row>

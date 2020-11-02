@@ -12,16 +12,10 @@
 </ion-header>
 
 <ion-content class="bg_color">
-	<ion-list lines="none">
+	<ion-list lines="none" >
 		<h2>{{'recent_search' | translate}}</h2>
-		<ion-item>
-			<h3>Cardiologist</h3>
-		</ion-item>
-		<ion-item>
-			<h3>Ophthalmologist</h3>
-		</ion-item>
-		<ion-item>
-			<h3>Dermatologist</h3>
+		<ion-item *ngFor="let item of especialistas">
+			<h3>{{item.titulo}}</h3>
 		</ion-item>
 	</ion-list>
 

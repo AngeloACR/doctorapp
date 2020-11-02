@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { MedicoService } from "../../services/medico/medico.service";
 
 @Component({
   selector: 'app-appointment-book',
@@ -21,9 +22,13 @@ export class AppointmentBookPage implements OnInit {
    faqExpand12: boolean;
    faqExpand13: boolean;
    faqExpand14: boolean;
-  constructor(private navCtrl: NavController) { }
 
-  ngOnInit() {
+   doctorProfile: any;
+
+  constructor(private navCtrl: NavController, private medico: MedicoService) { }
+
+  async ngOnInit() {
+    this.doctorProfile = await this.medico.getDoctorProfile();
   }
 	
 	

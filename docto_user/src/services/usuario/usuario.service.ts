@@ -5,15 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioService {
 
-  constructor(
+  constructor() { }
 
-  ) { }
-
-  async getUsuario(){
-    let usuario= {
-      nombre: "angelo",
-      apellido: "crincoli"
-    }
-    return usuario
+  async getPerfilUsuarios(){ // my-profile.page
+    let perfilUsuarios= [
+      {
+        imagenPerfil: "assets/images/my_profile.png",
+        telefono: "987 654 3210",
+        nombre: "Sam Smith",
+        correo: "samsmith@mail.com"
+      }
+    ];
+    return perfilUsuarios
   }
 }

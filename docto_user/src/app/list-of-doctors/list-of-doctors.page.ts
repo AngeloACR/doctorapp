@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { FilterPage } from '../filter/filter.page';  
+import { MedicoService } from "../../services/medico/medico.service";
 @Component({
   selector: 'app-list-of-doctors',
   templateUrl: './list-of-doctors.page.html',
@@ -9,9 +10,12 @@ import { FilterPage } from '../filter/filter.page';
 })
 export class ListOfDoctorsPage implements OnInit {
 
-  constructor(private route: Router, private modalController: ModalController) { }
+  doctores: any;
 
-  ngOnInit() {
+  constructor(private route: Router, private modalController: ModalController, private medico: MedicoService) { }
+
+  async ngOnInit() {
+    this.doctores = await this.medico.getDoctores();
   }
  map() {
     this.route.navigate(['./map-view']);

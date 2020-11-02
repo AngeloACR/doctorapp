@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MedicoService } from "../../services/medico/medico.service";
 
 @Component({
   selector: 'app-doctor-profile',
@@ -9,9 +10,26 @@ import { Router } from '@angular/router';
 export class DoctorProfilePage implements OnInit {
    favorite_icon = false;
   tab: string = "about";		
-  constructor(private route: Router) { }
 
-  ngOnInit() {
+  doctorProfile: any;
+  overviewProfile: any;
+  hospitalProfile: any;
+  serviciosProfile: any;
+  especializacionesProfile: any;
+  timeProfile: any;
+  feedbackProfile: any;
+
+  constructor(private route: Router, private medico: MedicoService) { }
+
+  async ngOnInit() {
+    this.doctorProfile = await this.medico.getDoctorProfile();
+    this.overviewProfile = await this.medico.getOverviewProfile();
+    this.hospitalProfile = await this.medico.getHospitalProfile();
+    this.serviciosProfile = await this.medico.getServiciosProfile();
+    this.especializacionesProfile = await this.medico.getEspecializacionesProfile();
+    this.timeProfile = await this.medico.getTimeProfile();
+    this.feedbackProfile = await this.medico.getFeedbackProfile();
+
   }
 
 toggleSaveIcon1() {

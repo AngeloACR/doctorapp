@@ -5,13 +5,13 @@
 		</ion-buttons>
 		<ion-title>{{'give_feedback' | translate}}</ion-title>
 	</ion-toolbar>
-	<div class="doctor_info d-flex">
+	<div class="doctor_info d-flex" *ngFor="let perfil of perfilDoctor">
 		<div class="img_box center_img">
-			<img src="assets/images/doc4.png" class="crop_img">
+			<img [src]="perfil.imagenLittle" class="crop_img">
 		</div>
 		<div class="text_box">
-			<h2>Dr. Joseph Williamson</h2>
-			<h3>Cardiac Surgeon At Apple Hospital,</h3>
+			<h2>{{perfil.nombre}}</h2>
+			<h3>{{perfil.especialidad}} At {{perfil.hospital}},</h3>
 		</div>
 	</div>
 </ion-header>
@@ -26,7 +26,7 @@
 					<ion-icon class="zmdi zmdi-star"></ion-icon>
 					<ion-icon class="zmdi zmdi-star"></ion-icon>
 					<ion-icon class="zmdi zmdi-star"></ion-icon>
-					<ion-icon class="zmdi zmdi-star"></ion-icon>
+					<ion-icon class="zmdi zmdi-star"></ion-icon> 
 				</div>
 			</ion-card>
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FaqService } from "../../services/faq/faq.service";
+
 @Component({
   selector: 'app-faqs',
   templateUrl: './faqs.page.html',
@@ -16,9 +18,14 @@ export class FaqsPage implements OnInit {
    faqExpand8: boolean;
    faqExpand9: boolean;
    faqExpand10: boolean;
-  constructor() { }
 
-  ngOnInit() {
+
+  preguntas: any;
+
+  constructor(private faq: FaqService) { }
+
+  async ngOnInit() {
+    this.preguntas = await this.faq.getPreguntasFAQ();
   }
 	
 	reset(){

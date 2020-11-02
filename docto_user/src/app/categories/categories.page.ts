@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MedicamentosService } from "../../services/medicamentos/medicamentos.service";
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.page.html',
@@ -8,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class CategoriesPage implements OnInit {
   tab: string = "otc";
-  constructor(private route: Router) { }
 
-  ngOnInit() {
+  categoriamedicamentos: any;
+  listaProducto: any;
+
+  constructor(private route: Router, private medicamentos: MedicamentosService) { }
+
+  async ngOnInit() {
+    this.categoriamedicamentos = await this.medicamentos.getCategoriaMedicamentos();
+    this.listaProducto = await this.medicamentos.getListaProductos();
   }
 	
  cart() {

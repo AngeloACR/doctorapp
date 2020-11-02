@@ -1,6 +1,6 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-buttons slot="start">
+		<ion-buttons slot="start"> 
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title>
@@ -21,14 +21,14 @@
 </ion-header>
 
 <ion-content class="bg_color">
-	<div class="banner">
+	<div class="banner" *ngFor="let producto of perfilProducto">
 		<div class="banner_img">
-			<img src="assets/images/med1.png">
+			<img [src]="producto.imagenProducto">
 		</div>
 		<div class="banner_details">
-			<h2 class="item_title">Vicks VapoRub Balm</h2>
+			<h2 class="item_title">{{producto.nombre}} {{producto.tipo}}</h2>
 			<h3 class="d-flex">
-				<span class="category">Health Care Product</span>
+				<span class="category">{{producto.categoria}}</span>
 
 				<span class="end">
 					<ion-icon class="zmdi zmdi-star active"></ion-icon>
@@ -37,7 +37,7 @@
 					<ion-icon class="zmdi zmdi-star active"></ion-icon>
 					<ion-icon class="zmdi zmdi-star"></ion-icon>
 					&nbsp;
-					(152)
+					{{producto.voto}}
 				</span>
 			</h3>
 		</div>
@@ -59,13 +59,10 @@
 	<div class="tab_content" [ngSwitch]="tab">
 		<!--About section start> -->
 		<div *ngSwitchCase="'about'">
-			<div class="description">
+			<div class="description" *ngFor="let producto of perfilProducto">
 				<div class="text_box">
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						{{producto.descripcion}}
 					</p>
 				</div>
 			</div>
@@ -73,91 +70,16 @@
 				<h2> {{'smilar_products' | translate}}</h2>
 				<div class="item_row">
 					<ion-row>
-						<ion-col size="6">
+						<ion-col size="6" *ngFor="let item of producto">
 							<div class="item ion-text-center">
 								<div class="item_content">
 									<div class="img_box">
-										<img src="assets/images/med1.png">
+										<img [src]="item.imagenProducto">
 									</div>
-									<h2>Vicks VapoRub<br> Balm</h2>
+									<h2>{{item.nombre}}<br> {{item.tipo}}</h2>
 								</div>
 								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$6.00</h3>
-									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
-								</div>
-							</div>
-						</ion-col>
-
-						<ion-col size="6">
-							<div class="item ion-text-center">
-								<div class="item_content">
-									<div class="img_box">
-										<img src="assets/images/med2.png">
-									</div>
-									<h2>Salospir<br> Tablets</h2>
-								</div>
-								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$17.00</h3>
-									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
-								</div>
-							</div>
-						</ion-col>
-
-						<ion-col size="6">
-							<div class="item ion-text-center">
-								<div class="item_content">
-									<div class="img_box">
-										<img src="assets/images/med3.png">
-									</div>
-									<h2>Xenical" 120 mg<br> Tablets</h2>
-								</div>
-								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$7.40</h3>
-									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
-								</div>
-							</div>
-						</ion-col>
-
-
-						<ion-col size="6">
-							<div class="item ion-text-center">
-								<div class="item_content">
-									<div class="img_box">
-										<img src="assets/images/med4.png">
-									</div>
-									<h2> Arbor-OTC <br> Tablets</h2>
-								</div>
-								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$3.00</h3>
-									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
-								</div>
-							</div>
-						</ion-col>
-
-						<ion-col size="6">
-							<div class="item ion-text-center">
-								<div class="item_content">
-									<div class="img_box">
-										<img src="assets/images/med5.png">
-									</div>
-									<h2> Allergy Relief<br> Tablets</h2>
-								</div>
-								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$10.00</h3>
-									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
-								</div>
-							</div>
-						</ion-col>
-						<ion-col size="6">
-							<div class="item ion-text-center">
-								<div class="item_content">
-									<div class="img_box">
-										<img src="assets/images/med1.png">
-									</div>
-									<h2>Vicks VapoRub<br> Balm</h2>
-								</div>
-								<div class="item_footer d-flex">
-									<h3 class="ion-text-center">$6.00</h3>
+									<h3 class="ion-text-center">{{item.precio}}</h3>
 									<h4 class="ion-text-center end"><span> {{'add_to_cart' | translate}}</span></h4>
 								</div>
 							</div>
@@ -172,17 +94,17 @@
 
 		<!--Reviews section Start> -->
 		<ion-list lines="none" *ngSwitchCase="'reviews'">
-			<ion-item>
+			<ion-item *ngFor="let review of reviews">
 				<div class="item_inner">
 					<div class="reviewer_details d-flex">
 						<div class="img_box center_img">
-							<img src="assets/images/4.png" class="crop_img">
+							<img [src]="review.imagenUsuario" class="crop_img">
 						</div>
 						<div class="text_box">
 							<h2 class="d-flex">
-								<span class="reviewer_name">Ronny George</span>
+								<span class="reviewer_name">{{review.nombreUsuario}}</span>
 								<span class="end">
-									5.0
+									{{review.puntuacion}}
 									&nbsp;
 									<ion-icon class="zmdi zmdi-star active"></ion-icon>
 									<ion-icon class="zmdi zmdi-star active"></ion-icon>
@@ -193,523 +115,14 @@
 							</h2>
 
 							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">20 Dec, 2017</span>
+								{{'for' | translate}}&nbsp;<strong>{{review.for}}</strong>
+								<span class="end">{{review.fecha}}</span>
 							</h3>
 						</div>
 					</div>
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+						{{review.comentario}}
 					</p>
-
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</p>
-				</div>
-			</ion-item>
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/7.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Reena Roy</span>
-								<span class="end">
-									4.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star "></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">15 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/6.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Herry Johnson</span>
-								<span class="end">
-									1.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>HeadAche</strong>
-								<span class="end">12 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/8.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">linda johnson</span>
-								<span class="end">
-									3.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star  "></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">10 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-				</div>
-			</ion-item>
-			
-				<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/4.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Ronny George</span>
-								<span class="end">
-									5.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">20 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</p>
-				</div>
-			</ion-item>
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/7.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Reena Roy</span>
-								<span class="end">
-									4.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star "></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">15 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/6.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Herry Johnson</span>
-								<span class="end">
-									1.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>HeadAche</strong>
-								<span class="end">12 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/8.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">linda johnson</span>
-								<span class="end">
-									3.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star  "></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">10 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-				</div>
-			</ion-item>
-			
-			
-				<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/4.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Ronny George</span>
-								<span class="end">
-									5.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">20 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</p>
-				</div>
-			</ion-item>
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/7.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Reena Roy</span>
-								<span class="end">
-									4.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star "></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">15 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/6.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Herry Johnson</span>
-								<span class="end">
-									1.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>HeadAche</strong>
-								<span class="end">12 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/8.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">linda johnson</span>
-								<span class="end">
-									3.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star  "></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">10 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-				</div>
-			</ion-item>
-			
-				<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/4.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Ronny George</span>
-								<span class="end">
-									5.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">20 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</p>
-				</div>
-			</ion-item>
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/7.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Reena Roy</span>
-								<span class="end">
-									4.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star "></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">15 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/6.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">Herry Johnson</span>
-								<span class="end">
-									1.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>HeadAche</strong>
-								<span class="end">12 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-					</p>
-				</div>
-			</ion-item>
-
-
-			<ion-item>
-				<div class="item_inner">
-					<div class="reviewer_details d-flex">
-						<div class="img_box center_img">
-							<img src="assets/images/8.png" class="crop_img">
-						</div>
-						<div class="text_box">
-							<h2 class="d-flex">
-								<span class="reviewer_name">linda johnson</span>
-								<span class="end">
-									3.0
-									&nbsp;
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star active"></ion-icon>
-									<ion-icon class="zmdi zmdi-star  "></ion-icon>
-									<ion-icon class="zmdi zmdi-star"></ion-icon>
-								</span>
-							</h2>
-
-							<h3 class="d-flex">
-								{{'for' | translate}}&nbsp;<strong>Cold Fever</strong>
-								<span class="end">10 Dec, 2017</span>
-							</h3>
-						</div>
-					</div>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-					</p>
-
 				</div>
 			</ion-item>
 		</ion-list>

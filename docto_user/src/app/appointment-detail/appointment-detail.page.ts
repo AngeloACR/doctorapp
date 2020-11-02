@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CitasService } from "../../services/citas/citas.service";
+
 @Component({
   selector: 'app-appointment-detail',
   templateUrl: './appointment-detail.page.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentDetailPage implements OnInit {
 
-  constructor() { }
+  getCitas: any;
+  getPerfilCitas: any;
 
-  ngOnInit() {
+  constructor(private citas: CitasService) { }
+
+  async ngOnInit() {
+    this.getCitas = await this.citas.getCitas();
+    this.getPerfilCitas = await this.citas.getPerfilCitas();
   }
 
 }
