@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FeedbackService } from "../../services/feedback/feedback.service";
+
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.page.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackPage implements OnInit {
 
-  constructor() { }
+  feedbackProfile: any;
 
-  ngOnInit() {
+  constructor(private feedback: FeedbackService) { }
+
+  async ngOnInit() {
+    this.feedbackProfile = await this.feedback.getFeedbackProfile();
   }
 
 }
