@@ -1,18 +1,18 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-menu-button></ion-menu-button>
+			<ion-menu-button></ion-menu-button> 
 		</ion-buttons>
 		<ion-title>{{'edit_profile' | translate}}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="bg_color">
+<ion-content class="bg_color" *ngFor="let item of user">
 	<div class="form">
 		<h2>{{'feature_image' | translate}}</h2>
 		<div class="profile_image d-flex">
 			<div class="img_box center_img">
-				<img src="assets/images/img_profile.png" class="crop_img">
+				<img [src]="item.imgPerfil" class="crop_img">
 			</div>
 			<h3 class="d-flex">
 				<ion-icon class="zmdi zmdi-camera ion-text-start"></ion-icon>
@@ -25,12 +25,12 @@
 		<ion-list lines="none">
 			<ion-item lines="none">
 				<ion-label mode="md" position="stacked">{{'full_name' | translate}}</ion-label>
-				<ion-input mode="md" type="name" value="Geroge Anderson"></ion-input>
+				<ion-input mode="md" type="name" [value]="item.nombre"></ion-input>
 			</ion-item>
 
 			<ion-item lines="none">
 				<ion-label mode="md" position="stacked">{{'phone_number' | translate}}</ion-label>
-				<ion-input mode="md" type="name" value="+1 987 654 3210"></ion-input>
+				<ion-input mode="md" type="name" [value]="item.telefono"></ion-input>
 			</ion-item>
 
 			<ion-item lines="none">
@@ -44,7 +44,7 @@
 
 			<ion-item lines="none">
 				<ion-label mode="md" position="stacked">{{'email_address' | translate}}</ion-label>
-				<ion-input mode="md" type="enail" value=deliveryman@mail.com></ion-input>
+				<ion-input mode="md" type="enail" [value]="item.correo"></ion-input>
 			</ion-item>
 		</ion-list>
 	</div>
@@ -58,7 +58,7 @@
 					<div class="text_box">
 						<h3>{{'goverment_id' | translate}}</h3>
 						<h4 class="d-flex">
-							<span class="id_details">myvoterid.jpg</span>
+							<span class="id_details">{{item.id_detalle1}}</span>
 							<span class="end ion-text-end">{{'upload' | translate}}</span>
 						</h4>
 					</div>
@@ -71,7 +71,7 @@
 					<div class="text_box">
 						<h3>{{'goverment_id' | translate}}</h3>
 						<h4 class="d-flex">
-							<span class="id_details">{{'not_uploaded_yet' | translate}}</span>
+							<span class="id_details">{{ item.id_detalle2 | translate}}</span>
 							<span class="end ion-text-end">{{'upload' | translate}}</span>
 						</h4>
 					</div>

@@ -8,7 +8,7 @@
 
 <ion-content>
 	<div class="container">
-		<div class="img_box">
+		<div class="img_box"> 
 			<img src="assets/images/delivery_completed.png">
 		</div>
 		<h1 class="ion-text-center">
@@ -16,15 +16,15 @@
 			<small> {{'thank_you_for_delivery_safely_on_time' | translate}}</small>
 		</h1>
 		<div class="order_info">
-			<ion-row>
+			<ion-row *ngFor="let item of correcto">
 				<ion-col size="7">
 					<h2>{{'your_drived' | translate}}</h2>
-					<h3>18 min (6.5)</h3>
+					<h3>{{item.tiempo}} min ({{item.valor}})</h3>
 					<h4 (click)="order_info()">{{'view_order_info' | translate}}</h4>
 				</ion-col>
 				<ion-col size="5">
 					<h2>{{'your_earning' | translate}}</h2>
-					<h3>$ 8.50</h3>
+					<h3>$ {{item.costo}}</h3>
 					<h4 (click)="view_earnings()">{{'view_earnings' | translate}}</h4>
 				</ion-col>
 			</ion-row>
