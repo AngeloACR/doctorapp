@@ -42,7 +42,7 @@ export class AppComponent {
       setTimeout(async () => {
         this.showSplash = false;
 
-        this.router.navigateByUrl("");
+        //this.router.navigateByUrl("");
       }, 7000);
       let defaultLang = window.localStorage.getItem(
         Constants.KEY_DEFAULT_LANGUAGE
