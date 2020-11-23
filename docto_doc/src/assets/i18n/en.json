@@ -80,5 +80,7 @@
     "appts": "Appts",
     "buy_this_app": "Buy This App",
     "change_language": "Change Language",
-    "select_language": "Select Language"
+    "select_language": "Select Language",
+    "password": "Password",
+    "please_enter_your_info": "Please enter your login info"
 }
