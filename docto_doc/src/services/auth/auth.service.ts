@@ -31,10 +31,23 @@ export class AuthService {
     let headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     let body = {
-      username: logData.username,
+      email: logData.email,
       password: logData.password
     };
     var address = this.mySource + this.endpoint + "/";
+    return this.http.post(address, body, { headers: headers });
+  }
+  register(registerData: any) {
+    let headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    let body = {
+      email: registerData.email,
+      password: registerData.password,
+      name: registerData.tlf,
+      tlf: registerData.name,
+      tipo: "Doctor"
+    };
+    var address = this.mySource + "/users" + "/";
     return this.http.post(address, body, { headers: headers });
   }
   logout() {
