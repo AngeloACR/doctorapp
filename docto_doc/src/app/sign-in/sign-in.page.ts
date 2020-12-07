@@ -24,10 +24,10 @@ export class SignInPage implements OnInit {
     });
   }
 
-  tabs() {
+  continue() {
     this.navCtrl.navigateRoot(["./tabs"]);
   }
-  continue() {
+  register() {
     this.route.navigate(["./register"]);
   }
 }

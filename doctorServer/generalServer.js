@@ -11,11 +11,11 @@ const helmet = require('helmet');
 const RateLimit = require('express-rate-limit');
 const app = express();
 
-const carreras = require('./delivery/routes/carreras');
-const carteras = require('./delivery/routes/carteras');
-const conductores = require('./delivery/routes/conductores');
-const trackers = require('./delivery/routes/trackers');
-const ubicaciones = require('./delivery/routes/ubicaciones');
+const asistencias = require('./general/routes/asistencias');
+const empresas = require('./general/routes/empresas');
+const faqs = require('./general/routes/faqs');
+const terminosycondiciones = require('./general/routes/terminosycondiciones');
+const ubicaciones = require('./general/routes/ubicaciones');
 
 module.exports.init = function (port) {
     app.set('port', (port));
@@ -62,10 +62,10 @@ module.exports.init = function (port) {
 
     //Adding routes
 
-    app.use('/carreras', carreras);
-    app.use('/carteras', carteras);
-    app.use('/conductores', conductores);
-    app.use('/trackers', trackers);
+    app.use('/asistencias', asistencias);
+    app.use('/empresas', empresas);
+    app.use('/faqs', faqs);
+    app.use('/terminosycondiciones', terminosycondiciones);
     app.use('/ubicaciones', ubicaciones);
 
     return app

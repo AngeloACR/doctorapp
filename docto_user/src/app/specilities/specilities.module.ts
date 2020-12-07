@@ -1,23 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
- 
-import { IonicModule } from '@ionic/angular';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { TranslateModule } from "@ngx-translate/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { SpecilitiesPageRoutingModule } from './specilities-routing.module';
+import { IonicModule } from "@ionic/angular";
 
-import { SpecilitiesPage } from './specilities.page';
+import { SpecilitiesPageRoutingModule } from "./specilities-routing.module";
+
+import { SpecilitiesPage } from "./specilities.page";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-	TranslateModule,   
+    ReactiveFormsModule,
+    TranslateModule,
     SpecilitiesPageRoutingModule
   ],
   declarations: [SpecilitiesPage]
 })
 export class SpecilitiesPageModule {}
- 
