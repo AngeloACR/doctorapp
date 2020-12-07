@@ -4,7 +4,12 @@ const crypto = require('crypto');
 const db = require('../../database');
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
-
+module.exports.tables = {
+    TipoUsuario: {
+        id: 'Codigo_tipo_Usuario',
+        descripcion: 'Descripcion_tipo_usuario',
+    }
+}
 module.exports.addRol = async function (newRol) {
     try {
         let query = 'SELECT * FROM ?? WHERE ?? = ?';

@@ -2,8 +2,24 @@ const bcrypt = require('bcryptjs');
 const environment = require('../../config/environment');
 const crypto = require('crypto');
 const db = require('../../database');
-const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
+module.exports.tables = {
+    UsuarioDoctorWeb: {
+        id: 'id_Usuario',
+        usuario: 'Login_usuario',
+        correo: 'Correo_electronico',
+        telefono: 'Numero_celular',
+        contraseña: 'Clave_usuario',
+        status: 'Estado_usuario',
+        caducidad: 'Fecha_caducidad',
+        idPersona: 'Codigo_persona',
+        tipo: 'Codigo_tipo_Usuario',
+        telefonoValidado: 'Telefono_validado',
+        correoValidado: 'Correo_validado',
+    }
+}
+
+
 
 module.exports.comparePass = async function (candidatePassword, contraseña) {
     try {
@@ -35,18 +51,19 @@ module.exports.genToken = function (usuario) {
     }
 };
 
+
 module.exports.addUser = async function (newUser) {
     try {
         let query = 'SELECT * FROM ?? WHERE ?? = ?';
         let queryData = ['UsuarioDoctorWeb', 'Login_usuario', newUser.username];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results != 0) {
             throw new Error('Email already in use');
         } else {
             newUser.password = await this.hashPass(newUser.password);
             query = 'INSERT INTO ?? (??, ??, ??) VALUES (?, ?, ?)';
             queryData = ['UsuarioDoctorWeb', 'Login_usuario', 'Clave_usuario', 'Codigo_tipo_Usuario', newUser.username, newUser.password, newUser.tipo];
-            results = await this.queryDb(query, queryData);
+            results = await this.db.queryDb(query, queryData);
             let response = {
                 status: true,
                 values: results
@@ -61,7 +78,7 @@ module.exports.authUser = async function (username, password) {
     try {
         let query = 'SELECT * FROM ?? WHERE ?? = ?';
         let queryData = ['UsuarioDoctorWeb', 'Login_usuario', username];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         console.log(results);
         let user = {
             id: results[0].id_Usuario,
@@ -97,7 +114,7 @@ module.exports.deleteUser = async function (username) {
         console.log('starting deletion')
         let query = 'DELETE FROM ?? WHERE ?? = ?';
         queryData = ['UsuarioDoctorWeb', 'Login_usuario', username];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results) {
             throw new Error("Username doesn't exist")
         }
@@ -114,7 +131,7 @@ module.exports.updateUser = async function (user) {
     try {
         let query = 'UPDATE ?? SET ?? = ?, ?? = ?, ?? = ? WHERE ?? = ?';
         queryData = ['UsuarioDoctorWeb', 'Login_usuario', user.usernameNew, 'Codigo_tipo_Usuario', user.tipo, 'Clave_usuario', user.password, 'Login_usuario', user.usernameOld];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results) {
             throw new Error("Username doesn't exist")
         }
@@ -131,7 +148,7 @@ module.exports.getUser = async function (id) { //Need tons of work
     try {
         let query = 'SELECT * FROM ?? WHERE ?? = ?';
         let queryData = ['UsuarioDoctorWeb', 'id_Usuario', id];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results[0]) {
             throw new Error("Username doesn't exist")
         }
@@ -149,6 +166,7 @@ module.exports.getUser = async function (id) { //Need tons of work
         throw error;
     }
 };
+
 module.exports.getUsersByType = async function (type) { //Need tons of work
     try {
         let query;
@@ -160,7 +178,7 @@ module.exports.getUsersByType = async function (type) { //Need tons of work
             query = 'SELECT * FROM ?? WHERE ?? = ?';
             queryData = ['UsuarioDoctorWeb', 'Codigo_tipo_Usuario', type];
         }
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results) {
             throw new Error("There are no users of this type")
         }
@@ -183,11 +201,12 @@ module.exports.getUsersByType = async function (type) { //Need tons of work
         throw error;
     }
 };
+
 module.exports.getUsers = async function () { //Need tons of work
     try {
         let query = 'SELECT * FROM ??';
         let queryData = ['UsuarioDoctorWeb'];
-        let results = await this.queryDb(query, queryData);
+        let results = await this.db.queryDb(query, queryData);
         if (!results) {
             throw new Error("Username doesn't exist")
         }
@@ -259,18 +278,6 @@ module.exports.validateUser = async function (username, token) {
 
     } catch (error) {
         throw error;
-    }
-};
-
-module.exports.queryDb = async function (query, data) {
-    try {
-        let myDB = db.init();
-        let formatedQuery = mysql.format(query, data);
-        let results = await myDB.query(formatedQuery);
-
-        return results;
-    } catch (e) {
-        throw e
     }
 };
 

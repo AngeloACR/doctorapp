@@ -4,6 +4,37 @@ const crypto = require('crypto');
 const db = require('../../database');
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
+module.exports.tables = {
+    TipoIdentificacion: {
+        id: 'Codigo_tipo_identificacion',
+        descripcion: 'Descripcion_tipo_identificacion',
+    },
+    Persona: {
+
+        id: 'Codigo_persona',
+        nombres: 'Nombres',
+        apellidos: 'Apellidos',
+        tipoIdentificacion: 'Codigo_tipo_identificacion',
+        identificacion: 'Identificacion_persona',
+        sexo: 'Sexo',
+        fechaNacimiento: 'Fecha_nacimiento',
+        status: 'Estado_persona',
+        foto: 'Foto_persona',
+    },
+    DireccionesPersonas: {
+        id: 'Id_Direccion',
+        idPersona: 'Codigo_persona',
+        tipo: 'Tipo_direccion',
+        pais: 'Id_pais',
+        estado: 'Id_Estado',
+        provincia: 'Id_Provincia',
+        ciudad: 'Id_Ciudad',
+        parroquia: 'Id_Parroquia',
+        direccion: 'Direccion',
+        latitud: 'Latitud',
+        longitud: 'Longitud',
+    }
+}
 
 module.exports.addPersona = async function (newPersona) {
     try {
