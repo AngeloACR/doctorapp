@@ -27,9 +27,9 @@
 
 :root {
 	--white: #fff;
-	--primary: #0fc1a7;
+	--primary:  #0493d4;   //#0fc1a7;
 	--secondary: #f2bc0f;
-	--bg-color: #f3f3f3;
+	--bg-color: #d3d3d3;
 	--info_field_bg: #f9f9f9;
 	--transparent: rgba(0, 0, 0, 0);
 	--text-light: #7C7C7C;
@@ -155,6 +155,7 @@ ion-header {
 			ion-back-button {
 				--color: var(--white) !important;
 				color: var(--white) !important;
+				position: absolute;
 			}
 
 			ion-menu-button {

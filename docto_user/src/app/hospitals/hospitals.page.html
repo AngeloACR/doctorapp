@@ -1,18 +1,21 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title>
+		<ion-title style="padding: 0 !important;">
 			<div class="title_inner d-flex">
 				<div class="location" (click)="set_location()"> 
 					<h2 class="d-flex">
-						<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+						<!--<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>-->
+						<img style=" width: 30px; display: flex; height: 30px; margin: auto;" src="assets/images/icono_ubicacion_blanco.png">
 						Wallington
 					</h2>
 				</div>
 
-				<h3 class="page_title">{{'hospitals' | translate}}</h3>
+				<!--<h3 class="page_title">{{'hospitals' | translate}}</h3>-->
+				<img style=" width: 100%; display: flex; position:absolute; height: 120px; margin: auto;" src="assets/images/hospitales.png">
 
 				<span class="end" (click)="map()">
-					<ion-icon class="zmdi zmdi-map ion-text-end"></ion-icon>
+					<!--<ion-icon class="zmdi zmdi-map ion-text-end"></ion-icon>-->
+					<img style=" width: 25px; display: flex; height: 25px; padding-right: 10px; margin: auto;" src="assets/images/icono_ubicacion_mapa.png">
 				</span>
 			</div>
 		</ion-title>
@@ -27,9 +30,10 @@
 			</ion-slide>
 		</ion-slides>
 
-		<div class="search_box d-flex" (click)="search()">
-			<ion-icon name="search-outline" class="ion-text-start"></ion-icon>
-			<h2>{{'search_hospital_clinics_helth_center' | translate}}</h2>
+		<div class="search_box d-flex" style="justify-content: center;" (click)="search()">
+			<!--<ion-icon name="search-outline" class="ion-text-start"></ion-icon>-->
+			<img class="ion-text-start" style="display: block; width: 40px; height: 25px; padding-right: 10px;" src="assets/images/lupa.png">
+			<h2 class="text-center">{{'search_hospital_clinics_helth_center' | translate}}</h2>
 		</div>
 	</div>
 </ion-header>
@@ -40,11 +44,11 @@
 			<div class="item_inner">
 				<div class="item_header d-flex">
 					<div class="text_box" (click)="hospital_info()">
-						<h2>{{hospital.nombre}}</h2>
-						<h3>{{hospital.especialidad}}</h3>
+						<h2 style="font-weight: 600;">{{hospital.nombre}}</h2>
+						<h3 style="color: #1f1e1e;">{{hospital.especialidad}}</h3>
 					</div>
 					<h4 class="end">{{'call_now' | translate}}</h4>
-				</div>
+				</div> 
 
 				<div class="item_content" (click)="hospital_info()">
 					<div class="img_box center_img" *ngFor="let imghospital of imgHospitales">
@@ -53,7 +57,7 @@
 				</div>
 				<div class="item_footer">
 					<h3 class="d-flex">
-						<span class="address" (click)="hospital_info()">{{hospital.direccion}}</span>
+						<span style="color: #1f1e1e;" class="address" (click)="hospital_info()">{{hospital.direccion}}</span>
 						<span class="end">
 							<ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
 							{{'get_direction' | translate}}

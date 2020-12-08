@@ -16,7 +16,7 @@ export class MedicamentosService {
         imagen: "assets/images/Slider1.png"
       },
       {
-        imagen: "assets/images/Slider.png"
+        imagen: "assets/images/Slider.png" 
       }
     ];
     return imagenSlider

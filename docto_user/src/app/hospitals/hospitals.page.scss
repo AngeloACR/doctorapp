@@ -99,7 +99,7 @@ ion-list {
 
 	ion-item {
 		padding: 12px 0;
-		background: var(--white);
+		background-color: #d3d3d3;
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;
 		--padding-start: 0;
@@ -109,6 +109,7 @@ ion-list {
 		.item_inner {
 			width: 100%;
 			overflow: hidden;
+			background-color: #d3d3d3;
 
 			.item_header {
 				padding: 0 16px 12px 16px;
@@ -149,19 +150,14 @@ ion-list {
 
 			.item_content {
 				width: 100%;
-				overflow-x: scroll;
-				white-space: nowrap;
-				height: auto;
+				display: flex;
+				justify-content: space-between;
 
 				.img_box {
-					width: 81px;
-					height: 46px;
-					margin: 0 1px;
+					width: 90px;
+					height: 60px;
+					margin: 0 5px;
 					display: inline-block;
-
-					&:first-child {
-						margin-left: 16px;
-					}
 
 					&:last-child {
 						margin-right: 16px;

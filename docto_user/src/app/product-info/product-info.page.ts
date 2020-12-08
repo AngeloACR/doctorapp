@@ -5,7 +5,7 @@ import { MedicamentosService } from "../../services/medicamentos/medicamentos.se
 @Component({
   selector: 'app-product-info',
   templateUrl: './product-info.page.html',
-  styleUrls: ['./product-info.page.scss'],
+  styleUrls: ['./product-info.page.scss'], 
 })
 export class ProductInfoPage implements OnInit {
    favorite_icon = false;
