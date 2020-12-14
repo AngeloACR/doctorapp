@@ -1,6 +1,10 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title>{{'account' | translate}}</ion-title>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title style="position: relative; height: 90px; font-size: 18px;">{{'account' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 90px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 </ion-header>
 
@@ -21,14 +25,16 @@
 
 		<ion-item class="track_order">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-bike ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-bike ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_SEGUIMIENTO_DEL_PEDIDO.png">
 				<h2>{{'track_current_order' | translate}}</h2>
 			</div>
 		</ion-item>
 
 		<ion-item (click)="my_address()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_UBICACIÓN.png">
 				<h2>{{'my_address' | translate}}</h2>
 			</div>
 		</ion-item>
@@ -36,21 +42,24 @@
 
 		<ion-item>
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-bookmark ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-bookmark ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_ARTICULOS_GUARDADOS.png">
 				<h2>{{'saved_items' | translate}}</h2>
 			</div>
 		</ion-item>
 
 		<ion-item (click)="change_language()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-globe ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-globe ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_CAMBIO_DE_LENGUAJE.png">
 				<h2>{{'change_language' | translate}}</h2>
 			</div>
 		</ion-item>
 
 		<ion-item (click)="contact_us()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_CONTACTO.png">
 				<h2>{{'contact_us' | translate}}</h2>
 			</div>
 		</ion-item>
@@ -58,7 +67,8 @@
 
 		<ion-item (click)="terms_conditions()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-bike ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-bike ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_TERMINOS_Y_CONDICIONES.png">
 				<h2>{{'terms_conditions' | translate}}</h2>
 			</div>
 		</ion-item>
@@ -67,7 +77,8 @@
 
 		<ion-item (click)="faqs()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-assignment-alert ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-assignment-alert ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONOS_FAQS.png">
 				<h2>{{'faqs' | translate}}</h2>
 			</div>
 		</ion-item>
@@ -75,7 +86,8 @@
 
 		<ion-item (click)="logout()">
 			<div class="item_inner d-flex">
-				<ion-icon class="zmdi zmdi-open-in-new ion-text-start"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-open-in-new ion-text-start"></ion-icon>-->
+				<img class="ion-text-start" style="display: block; width: 40px; height: 32px; padding-right: 10px;" src="assets/images/ICONO_CERRAR_SESION.png">
 				<h2>{{'logout' | translate}}</h2>
 			</div>
 		</ion-item>
