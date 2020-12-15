@@ -1,61 +1,62 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title>{{'my_appointments' | translate}}</ion-title>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'my_appointments' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="bg_color" fullscreen>
+<ion-content fullscreen> 
 	<ion-list lines="none">
-		<h2>{{'upcoming_appointments' | translate}}</h2>
+		<h2 style="color: rgb(58, 52, 52)">{{'upcoming_appointments' | translate}}</h2>
 
 		<ion-item (click)="appointment_detail()" *ngFor="let cita of getCitas">
 			<div class="item_inner d-flex">
 				<div class="date_time">
-					<h3>{{cita.dia}}</h3>
-					<h4>{{cita.fecha}}</h4>
-					<h3>{{cita.hora}}</h3>
+					<h3 style="color: rgb(0, 0, 0); font-weight: 600; font-size: 13px;">{{cita.dia}}</h3>
+					<h4 style="color: #1474bb">{{cita.fecha}}</h4>
+					<h3 style="color: rgb(58, 52, 52)">{{cita.hora}}</h3>
 				</div>
 				<div class="appointment_details">
 					<div class="doctor_details d-flex">
-						<div class="img_box center_img">
+						<div class="img_box center_img" >
 							<img [src]="cita.imagenPerfil" class="crop_img">
 						</div>
 						<div class="text_box">
 							<h2 class="d-flex">
-								<span class="name">{{cita.nombreDoctor}}</span>
+								<span class="name" style="font-weight: 400;">{{cita.nombreDoctor}}</span>
 								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
 							</h2>
 							<h3>{{cita.especialidadDoctor}}</h3>
 						</div>
 					</div>
-					<p>{{cita.hospital}}, {{cita.direccionCita}}</p>
+					<p style="color: rgb(85, 76, 76)">{{cita.direccionCita}}</p>
 				</div>
 			</div>
 		</ion-item>
 
-		<h2>{{'past_appointments' | translate}}</h2>
+		<h2 style="color: rgb(58, 52, 52)">{{'past_appointments' | translate}}</h2>
 
 		<ion-item (click)="appointment_detail()" *ngFor="let cita of getCitas">
 			<div class="item_inner d-flex">
 				<div class="date_time">
-					<h3>{{cita.dia}}</h3>
-					<h4>{{cita.fecha}}</h4>
-					<h3>{{cita.hora}}</h3>
+					<h3 style="color: rgb(0, 0, 0); font-weight: 600; font-size: 13px;">{{cita.dia}}</h3>
+					<h4 style="color: #1474bb">{{cita.fecha}}</h4>
+					<h3 style="color: rgb(58, 52, 52)">{{cita.hora}}</h3>
 				</div>
 				<div class="appointment_details">
 					<div class="doctor_details d-flex">
-						<div class="img_box center_img">
+						<div class="img_box center_img" >
 							<img [src]="cita.imagenPerfil" class="crop_img">
 						</div>
 						<div class="text_box">
 							<h2 class="d-flex">
-								<span class="name">{{cita.nombreDoctor}}</span>
+								<span class="name" style="font-weight: 400;">{{cita.nombreDoctor}}</span>
 								<ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
 							</h2>
 							<h3>{{cita.especialidadDoctor}}</h3>
 						</div>
 					</div>
-					<p>{{cita.direccionCita}}</p>
+					<p style="color: rgb(85, 76, 76)">{{cita.direccionCita}}</p>
 				</div>
 			</div>
 		</ion-item>
