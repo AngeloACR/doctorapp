@@ -9,65 +9,66 @@
 </ion-header>
 
 <ion-content class="bg_color" *ngFor="let perfil of getPerfilCitas">
-	<ion-card>
+	<ion-card style="box-shadow: none !important; font-size: 21px !important;">
 		<div class="doctor_details d-flex" >
 			<div class="img_box center_img">
 				<img [src]="perfil.imagenPerfil" class="crop_img">
 			</div>
 			<div class="text_box">
 				<h2 class="d-flex">
-					<span class="name">{{perfil.nombreDoctor}}</span>
+					<span class="name" style="font-weight: 600;">{{perfil.nombreDoctor}}</span>
 					<span class="end cancel ion-text-end">{{'cancel' | translate}}</span>
 				</h2>
 				<h3>{{perfil.especialidadDoctor}}</h3>
 			</div>
 		</div>
 		
-		<div class="appointment_detail">
-			<div class="detail_box d-flex">
-				<ion-icon class="zmdi zmdi-calendar-alt ion-text-end"></ion-icon>
+		<div class="appointment_detail" >
+			<div class="detail_box d-flex" style="margin-bottom: 15px; margin-top: 20px;">
+				<!--<ion-icon class="zmdi zmdi-calendar-alt ion-text-end"></ion-icon>-->
+				<img src="assets/images/ic_cita.png" style=" width: 25px; display: flex; height: 25px; margin: auto;">
 				<div class="text_box">
-					<h2>{{'appointment_date_time' | translate}}</h2>
-					<h3>{{perfil.dia}} {{perfil.fehca}} {{perfil.hora}}</h3>
+					<h2 style="color: rgb(48, 44, 44);">{{'appointment_date_time' | translate}}</h2>
+					<h3 style="font-weight: 600;">{{perfil.dia}} {{perfil.fehca}} {{perfil.hora}}</h3>
 					<h4>in {{perfil.falta}}</h4>
 				</div>
-				<h5 class="end ion-text-end">{{'reschedule' | translate}}</h5>
+				<!--<h5 class="end ion-text-end">{{'reschedule' | translate}}</h5>-->
 			</div>
 
-			<div class="detail_box d-flex">
-				<ion-icon class="zmdi zmdi-pin ion-text-end"></ion-icon>
+			<div class="detail_box d-flex" style="margin-bottom: 15px;">
+				<!--<ion-icon class="zmdi zmdi-pin ion-text-end"></ion-icon>-->
+				<img src="assets/images/ICONO_UBICACIÓN.png" style=" width: 25px; display: flex; height: 25px; margin: auto;">
+
 				<div class="text_box">
-					<h2>{{'location' | translate}}</h2>
-					<h3>{{perfil.hospital}}</h3>
+					<h2 style="color: rgb(48, 44, 44);">{{'location' | translate}}</h2>
+					<h3 style="font-weight: 600;">{{perfil.hospital}}</h3>
 					<h4>{{perfil.direccionCita}}</h4>
 				</div>
 			</div>
-		</div>
-		<div class="appointment_detail">
-			<div class="detail_box d-flex">
-				<ion-icon class="zmdi zmdi-assignment-check ion-text-end"></ion-icon>
+		
+			<div class="detail_box d-flex" style="margin-bottom: 15px;">
+				<!--<ion-icon class="zmdi zmdi-assignment-check ion-text-end"></ion-icon>-->
+				<img src="assets/images/ICON_CITAS_RESERVADAS.png" style=" width: 25px; display: flex; height: 25px; margin: auto;">
+
 				<div class="text_box">
-					<h2>{{'appointment_booked_for' | translate}}</h2>
-					<h3>{{perfil.solicitante}}</h3>
+					<h2 style="color: rgb(48, 44, 44);">{{'appointment_booked_for' | translate}}</h2>
+					<h3 style="font-weight: 600;">{{perfil.solicitante}}</h3>
 					<h4>{{perfil.solicitantePhone}}</h4>
 				</div>
 			</div>
 
 			<div class="detail_box d-flex">
-				<ion-icon class="zmdi zmdi-info ion-text-end"></ion-icon>
+				<!--<ion-icon class="zmdi zmdi-info ion-text-end"></ion-icon>-->
+				<img src="assets/images/ic_appointmentsact.png" style=" width: 25px; display: flex; height: 25px; margin: auto;">
+
 				<div class="text_box">
-					<h2>{{'appointment_number' | translate}}</h2>
-					<h3>{{perfil.citaNro}}</h3>
+					<h2 style="color: rgb(48, 44, 44);">{{'appointment_number' | translate}}</h2>
+					<h3 style="font-weight: 600;">{{perfil.citaNro}}</h3>
 					<h4>{{perfil.motivoCita}}</h4>
 				</div>
 			</div>
 		</div>
 	</ion-card>
-</ion-content>
 
-<ion-footer class="ion-no-border">
-	<ion-button size="large" shape="full" class="btn">
-		<ion-icon slot="start" class="zmdi zmdi-navigation"></ion-icon>
-		{{'get_direction' | translate}}
-	</ion-button>
-</ion-footer>
+	<ion-button style="width: 90%; margin: auto; margin-top: 38px;" size="default" shape="block" class="btn">{{'get_direction' | translate}}</ion-button>
+</ion-content>

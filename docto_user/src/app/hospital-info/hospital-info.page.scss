@@ -1,3 +1,12 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-header {
 	//	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
@@ -14,7 +23,6 @@ ion-header {
 		ion-title {
 			.title_inner {
 				h3 {
-					margin: 0;
 					display: flex;
 					align-items: center;
 
@@ -28,7 +36,7 @@ ion-header {
 
 						&.bookmark_icon {
 							position: relative;
-							overflow: hidden;
+							//overflow: hidden;
 							min-width: 40px;
 							height: 34px;
 
@@ -165,10 +173,12 @@ ion-header {
 
 .tab_content {
 	padding-top: 8px;
+	background: var(--bg-color) !important;
+
 
 	ion-list {
 		padding: 0;
-		background: var(--transparent) !important;
+		background: var(--bg-color) !important;
 		margin: 0;
 		padding: 0;
 
@@ -180,9 +190,9 @@ ion-header {
 			padding: 17px 17px 13px 17px;
 			//			box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
 			box-shadow: none;
-			box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
-				rgba(0, 0, 0, 0.14) 0px 2px 4px 0px,
-				rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+			//box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
+			//	rgba(0, 0, 0, 0.14) 0px 2px 4px 0px,
+			//	rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
 
 			h2 {
 				margin: 0;

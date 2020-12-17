@@ -13,7 +13,7 @@
 		<ion-icon class="zmdi zmdi-close ion-text-end" (click)="dismiss()"></ion-icon>
 
 		<ion-list lines="none" class="bg_color">
-			<h1 style="color: rgb(8, 8, 8)">{{'select_address_type' | translate}}</h1>
+			<h1 style="font-weight: 500;">{{'select_address_type' | translate}}</h1>
 			<ion-radio-group> 
 				<ion-row>
 					<ion-col size="4">
@@ -66,5 +66,7 @@
 			</ion-radio-group>
 		</ion-list>
 	</div>
-	<ion-button size="large" shape="full" class="btn" (click)="dismiss()">{{'save' | translate}}</ion-button>
+	<ion-button (click)="dismiss()" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
+		{{'save' | translate}}
+	</ion-button>
 </ion-footer>
