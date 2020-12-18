@@ -39,20 +39,36 @@ export class MedicoService {
   async getTipos() { // aplicado en doctors
     let tipos = [
       {
-        imagen: "assets/images/ic_doctors.png",
-        titulo: "doctors"
+        imagen: "assets/images/especialidades/Anestesiologo.png",
+        titulo: "Anestesiologo"
       },
       {
-        imagen: "assets/images/ic_dentist.png",
-        titulo: "dentist"
+        imagen: "assets/images/especialidades/Audiologo.png",
+        titulo: "Audiologo"
       },
       {
-        imagen: "assets/images/ic_ayurvedic.png",
-        titulo: "ayurvedic"
+        imagen: "assets/images/especialidades/CARDIOLOGO.png",
+        titulo: "Cargiologo"
       },
       {
-        imagen: "assets/images/ic_therapist.png",
-        titulo: "therapist"
+        imagen: "assets/images/especialidades/ENDOCRINOLOGO.png",
+        titulo: "Endocrinologo"
+      },
+      {
+        imagen: "assets/images/especialidades/Enfermeras.png",
+        titulo: "Enfermeras"
+      },
+      {
+        imagen: "assets/images/especialidades/Gastrenterólogo.png",
+        titulo: "Gastrenterólogo"
+      },
+      {
+        imagen: "assets/images/especialidades/Geriatras.png",
+        titulo: "Geriatras"
+      },
+      {
+        imagen: "assets/images/especialidades/Ginecologo.png",
+        titulo: "Ginecologo"
       }
     ];
     return tipos;
