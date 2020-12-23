@@ -4,10 +4,10 @@
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title>{{'send_to_bank' | translate}}</ion-title>
-	</ion-toolbar>
+	</ion-toolbar> 
 	<div class="banner">
 		<h2>{{'available_balance' | translate}}</h2>
-		<h1>$ 520.50</h1>
+		<h1 *ngFor="let item of balance">{{item.balance}}</h1>
 	</div>
 </ion-header>
 

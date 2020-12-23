@@ -19,7 +19,7 @@ export class HospitalsPage implements OnInit {
   async ngOnInit() {
     this.imgSlider = await this.hospital.getSliderHospitales();
     this.hospitales = await this.hospital.getHospitales();
-    this.imgHospitales = await this.hospital.getImgHospitales();
+    this.imgHospitales = await this.hospital.getImgHospitales(); 
   }
 
  hospital_info() {

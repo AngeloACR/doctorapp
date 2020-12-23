@@ -1,5 +1,5 @@
-<ion-header class="bg_transparent">
-	<ion-toolbar>
+<ion-header class="bg_color">
+	<ion-toolbar class="d-flex">
 		<ion-buttons slot="start"> 
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
@@ -19,9 +19,10 @@
 				</h3>
 			</div>
 		</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">		
 	</ion-toolbar>
 
-	<div class="banner">
+	<div class="banner" style="background-color: #d3d3d3 !important;">
 		<div class="banner_img">
 			<img src="assets/images/hospital_img.png">
 		</div>
@@ -48,7 +49,7 @@
 	<div class="tab_content" [ngSwitch]="tab">
 		<!--About section start> -->
 		<ion-list lines="none" *ngSwitchCase="'about'">
-			<ion-card class="departments">
+			<ion-card class="departments bg_color">
 				<h2>{{'departments' | translate}}</h2>
 				<ion-row>
 					<ion-col size="6" *ngFor="let departamento of departamentos">
@@ -60,7 +61,7 @@
 				</ion-row>
 			</ion-card>
 
-			<ion-card class="available_timings">
+			<ion-card class="available_timings bg_color">
 				<h2>{{'available_timings' | translate}}</h2>
 				<ion-row>
 					<ion-col size="6" *ngFor="let horario of horarios">
@@ -99,7 +100,7 @@
 				</ion-row>
 			</ion-card>
 
-			<ion-card class="address_box" *ngFor="let direccion of direcciones">
+			<ion-card class="address_box  bg_color" *ngFor="let direccion of direcciones">
 				<div class="address">
 					<h2>{{'address' | translate}}</h2>
 					<div class="d-flex">
@@ -119,7 +120,7 @@
 
 		<!--Doctors section start> -->
 		<ion-list class="doctors_list" lines="none" *ngSwitchCase="'doctors'">
-			<ion-card [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()" *ngFor="let departamento of departamentos">
+			<ion-card class=" bg_color" [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()" *ngFor="let departamento of departamentos">
 				<div class="card_header">
 					<h2 class="d-flex">
 						<span class="card_title">{{departamento.nombre}}</span>
@@ -128,7 +129,7 @@
 				</div>
 				<div class="card_content">
 					<ion-item *ngFor="let doctor of doctores">
-						<div class="item_inner">
+						<div class="item_inner  bg_color">
 							<div class="item_header d-flex">
 								<div class="img_box center_img" (click)="doctor_profile()">
 									<img [src]="doctor.imagen" class="crop_img">
@@ -169,11 +170,9 @@
 		</ion-list>
 		<!--Doctors section end> -->
 	</div>
-</ion-content>
 
-<ion-footer class="ion-no-border">
-	<ion-button *ngIf="tab == 'about'" size="large" shape="full" class="btn">
-		<ion-icon slot="start" class="zmdi zmdi-phone"></ion-icon>
+	<ion-button *ngIf="tab == 'about'" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
 		{{'call_now' | translate}}
 	</ion-button>
-</ion-footer>
+
+</ion-content>

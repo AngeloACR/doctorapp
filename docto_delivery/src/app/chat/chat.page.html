@@ -4,8 +4,8 @@
 	</div>
 	<div class="customer_detail d-flex">
 		<ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
-		<div class="text_box">
-			<h2>Sam Smith</h2>
+		<div class="text_box" *ngFor="let item of posicion">
+			<h2>{{item.nombreLlegada}}</h2> 
 			<p>{{'customer' | translate}}</p>
 		</div>
 		<ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
@@ -13,17 +13,17 @@
 </ion-header>
 
 <ion-content fullsereen>
-	<div class="chat_container d-flex">
+	<div class="chat_container d-flex" *ngFor="let item of mensaje">
 		<div class="chat_box d-flex received">
 			<div class="chat">
-				<h2>On my way ma'm <br>Will reach in 10 mins.</h2>
-				<p>12:15 pm</p>
+				<h2>{{item.recibido}}</h2>
+				<p>{{item.horaRecibida}}</p>
 			</div>
 		</div>
 		<div class="chat_box d-flex send">
 			<div class="chat">
-				<h2>Hey there?<br>How much time?</h2>
-				<p>12:15 pm</p>
+				<h2>{{item.enviado}}</h2>
+				<p>{{item.horaEnviada}}</p>
 			</div>
 		</div>
 	</div>

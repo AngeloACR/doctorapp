@@ -13,7 +13,7 @@
 				<!--
 				
 				<div class="online_button offline end">
-					{{'go_offline' | translate}}
+					{{'go_offline' | translate}} 
 				</div>
 -->
 
@@ -33,17 +33,17 @@
 </ion-content>
 <ion-footer class="ion-no-border">
 	<div class="all_delivery">
-		<ion-row class="ion-text-center">
+		<ion-row class="ion-text-center" *ngFor="let item of delivery">
 			<ion-col size="4">
-				<h2>64</h2>
+				<h2>{{item.ordenes}}</h2>
 				<h3>{{'orders' | translate}}</h3>
 			</ion-col>
 			<ion-col size="4">
-				<h2>68 km</h2>
+				<h2>{{item.km}} km</h2>
 				<h3>{{'ride' | translate}}</h3>
 			</ion-col>
 			<ion-col size="4">
-				<h2>$302.50</h2>
+				<h2>${{item.costo}}</h2>
 				<h3>{{'earnings' | translate}}</h3>
 			</ion-col>
 		</ion-row>

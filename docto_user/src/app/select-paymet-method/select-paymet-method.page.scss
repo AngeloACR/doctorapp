@@ -1,3 +1,12 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 .order-steps {
 	//padding-top: 10px;
 	background: var(--primary);
@@ -118,6 +127,8 @@
 
 ion-footer {
 	padding-top: 12px;
+	background-color: var(--bg-color);
+
 
 	.amount_payable {
 		width: 100%;

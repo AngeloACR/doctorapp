@@ -1,3 +1,12 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-header {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
 		rgba(0, 0, 0, 0.14) 0px 2px 4px 0px,
@@ -41,6 +50,7 @@ ion-header {
 		overflow: hidden;
 		overflow-x: scroll;
 		white-space: nowrap;
+		background-color: var(--bg-color);
 
 		.date {
 			display: inline-block;
@@ -183,7 +193,7 @@ ion-header {
 				&.item-has-placeholder {
 					--min-height: 40px;
 					margin-bottom: 12px;
-					background: var(--bg-color) !important;
+					background: var(--white) !important;
 
 					ion-input {
 						--placeholder-opacity: .6;

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { DoctorService } from "../../services/doctor/doctor.service";
+
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.page.html',
@@ -7,9 +10,22 @@ import { Router } from '@angular/router';
 })
 export class MyProfilePage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private doctor: DoctorService) { }
 
-  ngOnInit() {
+  infoBanner: any;
+  perfil: any;
+  degrees: any;
+  servicios: any;
+  especializacion: any;
+  disponibilidad: any;
+
+  async ngOnInit() { 
+    this.infoBanner = await this.doctor.getInfoBanner();
+    this.perfil = await this.doctor.getPerfil();
+    this.degrees = await this.doctor.getDegrees();
+    this.servicios = await this.doctor.getServicios();
+    this.especializacion = await this.doctor.getEspecializacion();
+    this.disponibilidad = await this.doctor.getDisponibilidad();
   }
 
 

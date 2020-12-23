@@ -3,7 +3,8 @@
 		<ion-buttons slot="start">
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
-		<ion-title>{{'select_payment_method' | translate}}</ion-title>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'select_payment_method' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 
 	<ion-row class="order-steps">
@@ -18,6 +19,7 @@
 		</ion-col>
 	</ion-row>
 </ion-header>
+
 <ion-content class="bg_color">
 
 	<div class="form">
@@ -66,8 +68,7 @@
 			<span class="end">$30.40</span>
 		</h2>
 	</div>
-	<ion-button size="large" shape="full" class="btn" (click)="confirm_order()">
+	<ion-button (click)="confirm_order()" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
 		{{'confirm_order' | translate}}
-		<ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
 	</ion-button> 
 </ion-footer>

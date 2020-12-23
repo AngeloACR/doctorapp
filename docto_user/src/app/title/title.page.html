@@ -7,13 +7,13 @@
 -->
 <ion-content (click)="dismiss()">
 
-</ion-content>
+</ion-content> 
 <ion-footer no-border>
 	<div class="form">
 		<ion-icon class="zmdi zmdi-close ion-text-end" (click)="dismiss()"></ion-icon>
 
-		<ion-list lines="none">
-			<h1>{{'select_address_type' | translate}}</h1>
+		<ion-list lines="none" class="bg_color">
+			<h1 style="font-weight: 500;">{{'select_address_type' | translate}}</h1>
 			<ion-radio-group> 
 				<ion-row>
 					<ion-col size="4">
@@ -60,11 +60,13 @@
 					</ion-col>
 				</ion-row>
 				<ion-item lines="none">
-					<ion-label position="floating">{{'enter_address_detail' | translate}}</ion-label>
+					<ion-label position="floating" style="color: rgb(10, 9, 9)">{{'enter_address_detail' | translate}}</ion-label>
 					<ion-input type="text" value="14134, silver Green Street, 2nd Avenue"></ion-input>
 				</ion-item>
 			</ion-radio-group>
 		</ion-list>
 	</div>
-	<ion-button size="large" shape="full" class="btn" (click)="dismiss()">{{'save' | translate}}</ion-button>
+	<ion-button (click)="dismiss()" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
+		{{'save' | translate}}
+	</ion-button>
 </ion-footer>

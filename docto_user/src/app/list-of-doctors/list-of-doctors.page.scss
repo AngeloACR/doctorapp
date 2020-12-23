@@ -1,3 +1,12 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-header {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 1px -5px,
 		rgba(0, 0, 0, 0.14) 0px 2px 4px 0px,
@@ -5,6 +14,13 @@ ion-header {
 
 	ion-toolbar ion-title {
 		.title_inner {
+			h1 {
+				margin-top: 20px;
+				position: relative;
+				left: 33%;
+				font-size: 18px;
+				font-weight: 300;
+			}
 			span {
 				position: relative;
 				z-index: 999;
@@ -55,14 +71,14 @@ ion-header {
 }
 
 ion-list {
-	background: var(--transparent) !important;
+	background: var(--bg-color) !important;
 	margin: 0;
 	padding: 0;
 	padding-top: 8px;
 
 	ion-item {
 		padding: 12px 11px;
-		background: var(--white);
+		background: var(--bg-color);
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;
 		--padding-start: 0;
@@ -77,6 +93,8 @@ ion-list {
 
 			.item_header {
 				padding-bottom: 17px;
+				background: var(--bg-color);
+
 				width: 100%;
 
 				.img_box {
@@ -123,12 +141,14 @@ ion-list {
 			}
 
 			.item_content {
+				background: var(--bg-color) !important;
+				
 				p {
 					margin: 0;
 					font-size: .73rem;
 					font-weight: 400;
 					padding-bottom: 9px;
-					color: var(--text-light2);
+					color: var(--black);
 				}
 
 				ion-row {
@@ -139,7 +159,7 @@ ion-list {
 							margin: 0;
 							font-size: .73rem;
 							font-weight: 400;
-							color: var(--text-light2);
+							color: var(--black);
 							display: flex;
 
 							align-content: center;

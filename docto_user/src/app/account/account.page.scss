@@ -1,13 +1,17 @@
 ion-header ion-toolbar ion-title {
-	padding: 0 22px !important;
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
 }
 
 ion-list {
-	background: var(--transparent) !important;
+	background: var(--bg-color) !important;
 	margin: 0;
 	padding: 0;
 	padding-top: 20px;
-	margin-bottom: 50px;
 
 	ion-item {
 		padding: 7px 25px;
@@ -70,7 +74,6 @@ ion-list {
 }
 
 .buy_this_app {
-	background: #4AC20F;
 	right: 20px;
 	position: fixed;
 	bottom: 37px;

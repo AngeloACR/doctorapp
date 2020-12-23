@@ -1,11 +1,20 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-list.item_list {
-	background: var(--transparent) !important;
+	background: var(--bg-color) !important;
 	margin: 0;
 	padding: 0;
 
 	ion-item {
 		padding: 18px 20px;
-		background: var(--white);
+		background: var(--bg-color);
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;
 		--padding-start: 0;
@@ -14,6 +23,8 @@ ion-list.item_list {
 
 		.item_inner {
 			width: 100%;
+			background: var(--bg-color) !important;
+
 
 			.item_img {
 				min-width: 60px;
@@ -21,6 +32,8 @@ ion-list.item_list {
 				height: 100%;
 				position: relative;
 				margin-right: 20px;
+				background: var(--bg-color) !important;
+
 
 				img {
 					width: 55px;
@@ -95,6 +108,7 @@ ion-list.item_list {
 
 ion-footer {
 	padding-top: 12px;
+	background-color: var(--bg-color);
 
 	.form {
 		width: calc(100% - 21px);

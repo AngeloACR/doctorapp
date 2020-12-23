@@ -1,3 +1,12 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-header {
 	.doctor_info {
 		background: var(--primary);
@@ -43,7 +52,7 @@ ion-header {
 			box-shadow: none;
 			border-radius: 0;
 			padding: 22px 20px;
-			background: var(--white);
+			background: var(--bg-color);
 			margin-bottom: 8px;
 
 			h2 {
@@ -67,12 +76,13 @@ ion-header {
 				&.item-has-placeholder {
 					--min-height: 40px;
 					margin-bottom: 0;
-					background: var(--bg-color) !important;
+					background: var(--white) !important;
 
 					ion-textarea,
 					ion-input {
 						--placeholder-opacity: .6;
 						font-size: 1rem !important;
+						
 					}
 
 				}

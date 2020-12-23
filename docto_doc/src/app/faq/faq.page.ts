@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FaqService } from "../../services/faq/faq.service";
+
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.page.html',
   styleUrls: ['./faq.page.scss'],
 })
-export class FaqPage implements OnInit {
+export class FaqPage implements OnInit { 
 
  faqExpand1: boolean;
    faqExpand2: boolean;
@@ -17,9 +19,13 @@ export class FaqPage implements OnInit {
    faqExpand8: boolean;
    faqExpand9: boolean;
    faqExpand10: boolean;
-  constructor() { }
 
-  ngOnInit() {
+   preguntas: any;
+
+  constructor(private faq: FaqService) { }
+
+  async ngOnInit() {
+    this.preguntas = await this.faq.getPreguntasFAQ();
   }
 	
 	reset(){

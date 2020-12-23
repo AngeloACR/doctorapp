@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TerminoscondicionesService } from "../../services/terminoscondiciones/terminoscondiciones.service";
+
 @Component({
   selector: 'app-tnc',
   templateUrl: './tnc.page.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TncPage implements OnInit {
 
-  constructor() { }
+  terminosCondiciones: any;
 
-  ngOnInit() {
+  constructor(private condiciones: TerminoscondicionesService) { }
+
+  async ngOnInit() {
+    this.terminosCondiciones = await this.condiciones.getTerminoscondiciones();
   }
 
 }

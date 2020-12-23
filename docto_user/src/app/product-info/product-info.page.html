@@ -1,22 +1,28 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-buttons slot="start"> 
-			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
-		</ion-buttons>
-		<ion-title>
-			<div class="title_inner d-flex">
-				{{'item_info' | translate}}
+		<ion-title style="padding: 0 !important;">
+			<div class="title_inner d-flex" style="justify-content: space-between;">
+				<ion-buttons slot="start"> 
+					<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+				</ion-buttons>
 
-				<h3 [ngClass]="favorite_icon ? 'end active' : 'end'" (click)="toggleSaveIcon1()">
-					<ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
-					<ion-icon class="zmdi zmdi-bookmark"></ion-icon>
-				</h3>
-				<span class="cart_icon" (click)="cart()">
-					<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
-					<ion-badge>1</ion-badge>
-				</span>
+				<div>
+					<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'Item Info' | translate}}</ion-title>
+				</div>
+				<div style="display: flex; position: relative; top: 7px;">
+					<h3 [ngClass]="favorite_icon ? 'end active' : 'end'" (click)="toggleSaveIcon1()">
+						<ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
+						<ion-icon class="zmdi zmdi-bookmark"></ion-icon>
+					</h3>
+					<span class="end" style="position: relative; right: 15px;" (click)="cart()">
+						<!--<ion-icon class="zmdi zmdi-map ion-text-end"></ion-icon>-->
+						<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+						<ion-badge style="position: relative; top: -8px; left: -5px; border-radius: 50%; background-color: var(--primary); width: 15px; height: 18px;">1</ion-badge>
+					</span>
+				</div>
 			</div>
 		</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 </ion-header>
 
@@ -132,14 +138,16 @@
 
 <ion-footer class="ion-no-border">
 	<ion-item lines="none">
-		<div class="item_inner d-flex">
+		<div class="item_inner d-flex" style="background-color: var(--bg-color) !important;">
 			<h2>$6.00</h2>
-			<ion-select [(ngModel)]="gaming" class="end" interface="popover" mode="ios">
+			<ion-select [(ngModel)]="gaming" class="end" interface="popover" mode="ios" style="background-color: var(--bg-color) !important;">
 				<ion-select-option value="1">500gm Pack</ion-select-option>
 				<ion-select-option value="2">200gm Pack</ion-select-option>
 				<ion-select-option value="3">100gm Pack</ion-select-option>
 			</ion-select>
 		</div>
 	</ion-item>
-	<ion-button size="large" shape="full" class="btn" (click)="cart()">{{'add_to_cart' | translate}}</ion-button>
+	<ion-button (click)="cart()" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
+		{{'add_to_cart' | translate}}
+	</ion-button> 
 </ion-footer>

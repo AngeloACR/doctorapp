@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DoctorService } from "../../services/doctor/doctor.service";
+
 @Component({
   selector: 'app-add-services',
   templateUrl: './add-services.page.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddServicesPage implements OnInit {
 
-  constructor() { }
+  constructor(private doctor: DoctorService) { }
 
-  ngOnInit() {
+  servicio: any;
+
+  async ngOnInit() {
+    this.servicio = await this.doctor.getServicio();
   }
 
 }
