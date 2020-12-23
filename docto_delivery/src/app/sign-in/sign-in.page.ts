@@ -23,10 +23,10 @@ export class SignInPage implements OnInit {
       password: new FormControl("")
     });
   }
-  tabs() {
+  continue() {
     this.navCtrl.navigateRoot(["./home"]);
   }
-  continue() {
+  register() {
     this.route.navigate(["./register"]);
   }
 }

@@ -1,0 +1,34 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.weekdoc.delivery"
+    }
+  },
+  "dependent_plugins": {}
+}

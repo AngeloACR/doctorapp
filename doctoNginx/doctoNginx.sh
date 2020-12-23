@@ -12,6 +12,7 @@ sudo apt-key fingerprint ABF5BD827BD9BF62
 
 sudo apt update
 sudo apt install nginx
+sudo service nginx start
 
 cp ./deliveryApi.conf /etc/nginx/sites-enabled/deliveryApi.conf
 cp ./doctorApi.conf /etc/nginx/sites-enabled/doctorApi.conf
