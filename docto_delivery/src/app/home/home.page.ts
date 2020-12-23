@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import { HomeService } from "../../services/home/home.service";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,9 +10,12 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private home: HomeService) { } 
 
-  ngOnInit() {
+  delivery: any;
+
+  async ngOnInit() {
+    this.delivery = await this.home.getDelivery();
   }
 
  offline() {

@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { APP_CONFIG, AppConfig } from '../app.config';
+import { APP_CONFIG, AppConfig } from '../app.config'; 
+
+import { UsuarioService } from "../../services/usuario/usuario.service";
 
 @Component({
   selector: 'app-account',
@@ -10,10 +12,14 @@ import { APP_CONFIG, AppConfig } from '../app.config';
 })
 export class AccountPage implements OnInit {
 
-  constructor(@Inject(APP_CONFIG) public config: AppConfig,private route: Router, private navCtrl: NavController) { }
+  perfilUsuarios: any;
 
-  ngOnInit() {
+  constructor(@Inject(APP_CONFIG) public config: AppConfig,private route: Router, private navCtrl: NavController, private usuario: UsuarioService) { }
+
+  async ngOnInit() {
+    this.perfilUsuarios = await this.usuario.getPerfilUsuarios();
   }
+
   my_profile() {
     this.route.navigate(['./my-profile']);
   }

@@ -7,14 +7,14 @@
 <ion-content fullscreen>
 	<ion-list lines="none">
 
-		<ion-item class="profile">
+		<ion-item class="profile" *ngFor="let perfil of perfilUsuarios"> 
 			<div class="item_inner d-flex">
 				<div class="img_box center_img">
-					<img src="assets/images/doc4.png" class="crop_img">
+					<img [src]="perfil.imagenPerfil" class="crop_img">
 				</div>
 				<div class="text_box">
-					<h2>Dr. Joseph Williamson</h2>
-					<p>Appolo Hospital</p>
+					<h2>{{perfil.nombre}}</h2>
+					<p>{{perfil.hospital}}</p>
 				</div>
 			</div>
 		</ion-item>

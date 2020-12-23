@@ -1,37 +1,37 @@
-<ion-header>
+<ion-header *ngFor="let perfil of perfilChat">
 	<ion-toolbar>
-		<ion-buttons slot="start">
+		<ion-buttons slot="start"> 
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title>
 			<div class="d-flex user_details">
 				<div class="img_box center_img">
-					<img src="assets/images/8.png" class="crop_img">
+					<img [src]="perfil.img" class="crop_img">
 				</div>
 				<h2 class="d-flex">
-					<span class="name">Emili Johnson</span>
+					<span class="name">{{perfil.nombre}}</span>
 					<ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
 				</h2>
 			</div>
 		</ion-title>
 	</ion-toolbar>
 	<div class="appointment_details">
-		<h2>12 JUL, 12:20 <span>|</span> Chest Pain from last 5 days</h2>
+		<h2>{{perfil.fecha}} <span>|</span> {{perfil.causa}}</h2>
 	</div>
 </ion-header>
 
 <ion-content  fullsereen>
-	<div class="chat_container d-flex">
+	<div class="chat_container d-flex" *ngFor="let chat of conversationChat">
 		<div class="chat_box d-flex send">
 			<div class="chat">
-				<h2>Hello Emilli <br> I hope you remember <br>about your appoitment <br> today with us.</h2>
-				<p>12:15 pm</p>
+				<h2>{{chat.enviado}}</h2>
+				<p>{{chat.horaEnviada}}</p>
 			</div>
 		</div>
 		<div class="chat_box d-flex received">
 			<div class="chat">
-				<h2>Hello Doctor, <br>Yes i remember. <br> I will be there right on time</h2>
-				<p>12:15 pm</p>
+				<h2>{{chat.recibido}}</h2>
+				<p>{{chat.horaRecibida}}</p>
 			</div>
 		</div>
 		 

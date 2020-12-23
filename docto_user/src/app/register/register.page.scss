@@ -7,6 +7,7 @@ ion-header ion-toolbar ion-title {
 	padding: 0 15px !important;
 }
 
+
 .form {
 	padding-top: 50px;
 
@@ -27,6 +28,10 @@ ion-header ion-toolbar ion-title {
 
 	ion-list {
 		margin-bottom: 28px;
+		
+		ion-item {
+			background-color: #fff;
+		}
 	}
 
 	h4 {

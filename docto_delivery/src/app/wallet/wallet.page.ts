@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { BancoService } from "../../services/banco/banco.service";
+
+
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.page.html',
@@ -8,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class WalletPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private banco: BancoService) { } 
 
-  ngOnInit() {
+  balance: any;
+  pedidos: any;
+
+  async ngOnInit() {
+    this.balance = await this.banco.getPerfilWallet();
+    this.pedidos = await this.banco.getPedidos();
   }
 
  send_to_bank() {

@@ -3,7 +3,8 @@
 		<ion-buttons slot="start">
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
-		<ion-title>{{'select_date_time' | translate}}</ion-title>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'select_date_time' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 	<div class="doctor_info d-flex" *ngFor="let doctor of doctorProfile">
 		<div class="img_box center_img">
@@ -74,10 +75,10 @@
 	</div>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="bg_color">
 	<div class="form">
 		<ion-list lines="none">
-			<ion-card>
+			<ion-card class="bg_color">
 				<h2>{{'available_times' | translate}}</h2>
 				<ion-radio-group value="biff">
 					<ion-row>
@@ -157,7 +158,7 @@
 				</ion-radio-group>
 			</ion-card>
 			
-			<ion-card >
+			<ion-card class="bg_color">
 				<h2>{{'appointment_for' | translate}}</h2>
 				<ion-item lines="none"> 
 					<ion-input class="ion-text-start" type="name" value="" placeholder="{{'full_name' | translate}}"></ion-input>
@@ -170,7 +171,8 @@
 			</ion-card>
 		</ion-list>
 	</div>
+
+	<ion-button (click)="tabs()" style="width: 90%; margin: auto; margin-bottom: 13px;" size="default" shape="block" class="btn">
+		{{'confirm_appointment' | translate}}
+	</ion-button>
 </ion-content>
-<ion-footer class="ion-no-border">
-	<ion-button size="large" shape="full" class="btn" (click)="tabs()">{{'confirm_appointment' | translate}}</ion-button>
-</ion-footer>

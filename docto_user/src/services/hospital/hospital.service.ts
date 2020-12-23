@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class HospitalService { 
+export class HospitalService {  
 
   constructor() { }
 
@@ -60,21 +60,6 @@ export class HospitalService {
 
   async getImgHospitales(){ // hospitals.page
     let imagenHospitales= [
-      {
-        imagen: "assets/images/h1.png",
-      },
-      {
-        imagen: "assets/images/h2.png",
-      },
-      {
-        imagen: "assets/images/h3.png",
-      },
-      {
-        imagen: "assets/images/h4.png",
-      },
-      {
-        imagen: "assets/images/h5.png",
-      },
       {
         imagen: "assets/images/h1.png",
       },

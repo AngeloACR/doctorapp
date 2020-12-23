@@ -27,9 +27,9 @@
 
 :root {
 	--white: #fff;
-	--primary: #0fc1a7;
-	--secondary: #f2bc0f;
-	--bg-color: #f3f3f3;
+	--primary:  #0493d4;   //#0fc1a7;
+	--secondary: #78c5ee;
+	--bg-color: #d3d3d3;
 	--info_field_bg: #f9f9f9;
 	--transparent: rgba(0, 0, 0, 0);
 	--text-light: #7C7C7C;
@@ -38,6 +38,7 @@
 	--red_color: #D71E1E;
 	--yelow_color: #ffba00;
 	--green_color: #21B624;
+	--black: #000;
 
 }
 
@@ -127,6 +128,11 @@ ion-header {
 	}
 
 	ion-toolbar {
+		
+		//background: url('../../assets/images/bg.png');
+		//background-size: cover;
+		//background-position: center;
+		//background-repeat: no-repeat; 
 		--background: var(--primary);
 		display: flex;
 		align-items: center;
@@ -155,6 +161,7 @@ ion-header {
 			ion-back-button {
 				--color: var(--white) !important;
 				color: var(--white) !important;
+				position: absolute;
 			}
 
 			ion-menu-button {
@@ -240,7 +247,7 @@ ion-header {
 		box-shadow: none !important;
 		margin: 0 auto;
 		--background: var(--transparent);
-		background: var(--bg-color);
+		background: var(--info_field_bg);
 		align-items: flex-start;
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;

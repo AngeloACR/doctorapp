@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DoctorService } from "../../services/doctor/doctor.service";
+
 @Component({
   selector: 'app-add-degre',
   templateUrl: './add-degre.page.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDegrePage implements OnInit {
 
-  constructor() { }
+  constructor(private doctor: DoctorService) { }
 
-  ngOnInit() {
+  degree: any;
+
+  async ngOnInit() {
+    this.degree = await this.doctor.getDegree();
   }
 
 }

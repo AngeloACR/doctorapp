@@ -6,19 +6,19 @@
 		<ion-title>{{'support' | translate}}</ion-title>
 	</ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
 	<div class="form">
 		<h1>{{'your_words' | translate}}<br>{{'means_a_lot' | translate}}<br>{{'to_us' | translate}} !</h1>
 		<h2>{{'let_us_know_queries_feedback' | translate}}</h2>
-		<ion-list lines="none">
+		<ion-list lines="none" *ngFor="let user of soporteUser">
 			<ion-item lines="none">
 				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
-				<ion-input class="ion-text-end" type="name" value="George Anderson"></ion-input>
+				<ion-input class="ion-text-end" type="name" [value]="user.nombre"></ion-input>
 			</ion-item>
 			<ion-item lines="none">
 				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>
-				<ion-input class="ion-text-end" type="name" value="deliveryman@mail.com"></ion-input>
+				<ion-input class="ion-text-end" type="name" [value]="user.correo"></ion-input>
 			</ion-item>
 
 			<ion-item lines="none">
