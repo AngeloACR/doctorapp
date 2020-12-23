@@ -1,3 +1,3 @@
 export class Constants {
-    static KEY_DEFAULT_LANGUAGE: string = 'dw_dl';
+  static KEY_DEFAULT_LANGUAGE: string = "es";
 }

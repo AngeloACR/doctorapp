@@ -11,14 +11,13 @@ const helmet = require('helmet');
 const RateLimit = require('express-rate-limit');
 const app = express();
 
-const users = require('./tienda/routes/users');
-const mails = require('./tienda/routes/mails');
-const auth = require('./tienda/routes/auth');
-const personas = require('./tienda/routes/personas');
-const roles = require('./tienda/routes/roles');
+const carrito = require('./tienda/routes/carritos');
+const ordenes = require('./tienda/routes/ordenes');
+const pagos = require('./tienda/routes/pagos');
+const tdc = require('./tienda/routes/tdcs');
 const ubicaciones = require('./tienda/routes/ubicaciones');
 
-module.exports.init = function (folder, port) {
+module.exports.init = function (port) {
     app.set('port', (port));
 
     // Middlewares initialization
@@ -59,15 +58,14 @@ module.exports.init = function (folder, port) {
 	*/
     // Set Static Folder
 
-    app.use(express.static(path.join(__dirname, folder)));
+    //app.use(express.static(path.join(__dirname, folder)));
 
     //Adding routes
 
-    app.use('/users', users);
-    app.use('/mails', mails);
-    app.use('/auth', auth);
-    app.use('/personas', personas);
-    app.use('/roles', roles);
+    app.use('/carrito', carrito);
+    app.use('/ordenes', ordenes);
+    app.use('/pagos', pagos);
+    app.use('/tdc', tdc);
     app.use('/ubicaciones', ubicaciones);
 
     return app

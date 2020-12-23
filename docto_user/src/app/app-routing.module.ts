@@ -4,11 +4,6 @@ import { SplashComponent } from "./splash/splash.component";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "sign-in",
-    pathMatch: "full"
-  },
-  {
-    path: "",
     loadChildren: () => import("./tabs/tabs.module").then(m => m.TabsPageModule)
   },
   {

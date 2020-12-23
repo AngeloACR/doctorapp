@@ -11,14 +11,13 @@ const helmet = require('helmet');
 const RateLimit = require('express-rate-limit');
 const app = express();
 
-const users = require('./usuario/routes/users');
-const mails = require('./usuario/routes/mails');
-const auth = require('./usuario/routes/auth');
-const personas = require('./usuario/routes/personas');
-const roles = require('./usuario/routes/roles');
-const ubicaciones = require('./usuario/routes/ubicaciones');
+const carreras = require('./delivery/routes/carreras');
+const carteras = require('./delivery/routes/carteras');
+const conductores = require('./delivery/routes/conductores');
+const trackers = require('./delivery/routes/trackers');
+const ubicaciones = require('./delivery/routes/ubicaciones');
 
-module.exports.init = function (folder, port) {
+module.exports.init = function (port) {
     app.set('port', (port));
 
     // Middlewares initialization
@@ -59,15 +58,14 @@ module.exports.init = function (folder, port) {
 	*/
     // Set Static Folder
 
-    app.use(express.static(path.join(__dirname, folder)));
+    //app.use(express.static(path.join(__dirname, folder)));
 
     //Adding routes
 
-    app.use('/users', users);
-    app.use('/mails', mails);
-    app.use('/auth', auth);
-    app.use('/personas', personas);
-    app.use('/roles', roles);
+    app.use('/carreras', carreras);
+    app.use('/carteras', carteras);
+    app.use('/conductores', conductores);
+    app.use('/trackers', trackers);
     app.use('/ubicaciones', ubicaciones);
 
     return app
