@@ -18,7 +18,7 @@ const personas = require('./usuario/routes/personas');
 const roles = require('./usuario/routes/roles');
 const ubicaciones = require('./usuario/routes/ubicaciones');
 
-module.exports.init = function (folder, port) {
+module.exports.init = function (port) {
 	app.set('port', (port));
 
 	// Middlewares initialization
@@ -59,7 +59,7 @@ module.exports.init = function (folder, port) {
 	*/
 	// Set Static Folder
 
-	app.use(express.static(path.join(__dirname, folder)));
+	//app.use(express.static(path.join(__dirname, folder)));
 
 	//Adding routes
 

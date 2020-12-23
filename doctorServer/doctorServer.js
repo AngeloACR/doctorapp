@@ -11,14 +11,14 @@ const helmet = require('helmet');
 const RateLimit = require('express-rate-limit');
 const app = express();
 
-const users = require('./usuario/routes/users');
-const mails = require('./usuario/routes/mails');
-const auth = require('./usuario/routes/auth');
-const personas = require('./usuario/routes/personas');
-const roles = require('./usuario/routes/roles');
-const ubicaciones = require('./usuario/routes/ubicaciones');
+const citas = require('./medicos/routes/citas');
+const doctores = require('./medicos/routes/doctores');
+const especializaciones = require('./medicos/routes/especializaciones');
+const hospitales = require('./medicos/routes/hospitales');
+const medicamentos = require('./medicos/routes/medicamentos');
+const ubicaciones = require('./medicos/routes/ubicaciones');
 
-module.exports.init = function (folder, port) {
+module.exports.init = function (port) {
     app.set('port', (port));
 
     // Middlewares initialization
@@ -59,15 +59,15 @@ module.exports.init = function (folder, port) {
 	*/
     // Set Static Folder
 
-    app.use(express.static(path.join(__dirname, folder)));
+    //app.use(express.static(path.join(__dirname, folder)));
 
     //Adding routes
 
-    app.use('/users', users);
-    app.use('/mails', mails);
-    app.use('/auth', auth);
-    app.use('/personas', personas);
-    app.use('/roles', roles);
+    app.use('/citas', citas);
+    app.use('/doctores', doctores);
+    app.use('/especializaciones', especializaciones);
+    app.use('/hospitales', hospitales);
+    app.use('/medicamentos', medicamentos);
     app.use('/ubicaciones', ubicaciones);
 
     return app
