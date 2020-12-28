@@ -1,17 +1,17 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+			<ion-back-button text="" style="position: absolute !important;" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'select_language' | translate}}</ion-title>
 		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="bg_color"> 
-	<ion-list lines="none">
-		<ion-radio-group [(ngModel)]="defaultLanguageCode">
-			<ion-item *ngFor="let language of languages" (click)="onLanguageClick(language)" class="item_shadow">
+<ion-content class="bg_color">
+	<ion-list lines="none" class="bg_color">
+		<ion-radio-group [(ngModel)]="defaultLanguageCode" class="bg_color">
+			<ion-item *ngFor="let language of languages" (click)="onLanguageClick(language)" class="item_shadow" class="bg_color">
 				<div class="item_inner d-flex">
 					<h3>{{language.name}}</h3>
 					<ion-radio class="end" value="{{language.code}}"></ion-radio>
@@ -19,7 +19,9 @@
 			</ion-item>
 		</ion-radio-group>
 	</ion-list>
-	<ion-button (click)="languageConfirm()" style="width: 90%; margin: auto; margin-bottom: 30px;" size="default" shape="block" class="btn">
-		{{'save' | translate}}
-	</ion-button>
 </ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="languageConfirm()">
+		{{'save' | translate}} 
+	</ion-button>
+</ion-footer>
