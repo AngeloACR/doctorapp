@@ -1,34 +1,33 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-menu-button></ion-menu-button>
+			<ion-menu-button style="position: absolute !important;"></ion-menu-button>
 		</ion-buttons>
-		<ion-title>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">
 			<div class="d-flex">
 				<span>{{'you_are_online' | translate}}</span>
 
-				<!--
-				<div class="online_button online end">
-					{{'go_online' | translate}}
-				</div>
--->
 				<div class="online_button offline end" (click)="home()">
 					{{'go_offline' | translate}}
 				</div>
+				<!--<div class="online_button offline end">
+					{{'go_offline' | translate}} 
+				</div>-->
 			</div>
 		</ion-title>
-	</ion-toolbar>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
+	</ion-toolbar> 
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="bg_color">
 	<div class="map center_img">
 		<img src="assets/images/map.png" class="crop_img">
+		
 		<div class="delivery_location" style="top: 31%; right: 49%; transform: rotate(-17deg);">
-			<img src="assets/images/deliveryman.png"> 
+			<img src="assets/images/deliveryman.png">
 		</div>
 	</div>
 </ion-content>
-
 <ion-footer class="ion-no-border">
 	<ion-button size="large" shape="full" class="btn" (click)="continue()">{{'new_delivery' | translate}}</ion-button>
 </ion-footer>

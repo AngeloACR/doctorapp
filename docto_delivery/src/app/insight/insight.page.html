@@ -1,11 +1,13 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-menu-button></ion-menu-button>
+			<ion-menu-button style="position: absolute !important;"></ion-menu-button>
 		</ion-buttons>
-		<ion-title>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">
 			<div class="d-flex">
-				{{'insight' | translate}}
+				<span>
+					{{'insight' | translate}}
+				</span>
 				<ion-select class="end" interface="popover" [(ngModel)]="gaming">
 					<ion-select-option value="1">{{'today' | translate}}</ion-select-option>
 					<ion-select-option value="2">{{'this_week' | translate}}</ion-select-option>
@@ -14,7 +16,8 @@
 				</ion-select>
 			</div>
 		</ion-title>
-	</ion-toolbar>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
+	</ion-toolbar> 
 </ion-header>
 
 <ion-content class="bg_color">

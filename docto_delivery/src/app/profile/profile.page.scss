@@ -1,12 +1,21 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 .form {
-	background: var(--white);
+	background: var(--bg-color);
 	margin-top: 5px;
 	width: 100%;
 	padding: 20px 16px 16px 16px;
 
 	h2 {
 		margin: 0;
-		color: var(--text-light);
+		color: var(--black);
 		font-size: 0.9rem;
 		padding: 0 0 10px 0;
 		text-transform: uppercase;
@@ -42,7 +51,7 @@
 
 	ion-list {
 		ion-item {
-			background: none;
+			background: var(--bg-color);
 			border: 0 !important;
 			border-bottom: 1px solid rgba(204, 204, 204, 0.6) !important;
 			padding: 0;
@@ -57,17 +66,20 @@
 				font-size: .9rem !important;
 				letter-spacing: 1px;
 				padding-bottom: 16px;
+				background: var(--bg-color);
 			}
 
 			ion-input {
 				font-size: 1rem !important;
 				font-weight: 400 !important;
 				margin-top: 5px;
+				background: var(--bg-color);
 			}
 
 			&.item-select ion-select {
 				font-size: 1rem !important;
 				font-weight: 400 !important;
+				background: var(--bg-color);
 			}
 		}
 	}

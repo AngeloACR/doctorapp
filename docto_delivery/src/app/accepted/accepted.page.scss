@@ -1,4 +1,13 @@
 ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
+ion-header ion-toolbar ion-title {
 	padding: 0 15px !important;
 
 	.order_info_button {
@@ -11,7 +20,7 @@ ion-header ion-toolbar ion-title {
 		min-width: 123px;
 		text-align: center;
 		color: var(--primary);
-		background: var(--white);
+		background: var(--bg-color);
 		display: flex;
 		align-items: center;
 
@@ -66,12 +75,12 @@ ion-header ion-toolbar ion-title {
 	ion-icon {
 		position: absolute;
 		z-index: 99;
-		background: var(--secondary);
+		background: var(--bg-color);
 		color: var(--white);
 		border-radius: 50%;
 		position: absolute;
 		z-index: 99;
-		background: var(--secondary);
+		background: var(--bg-color);
 		color: var(--white);
 		border-radius: 50%;
 		width: 42px;
@@ -89,7 +98,7 @@ ion-header ion-toolbar ion-title {
 	width: 100%;
 	z-index: 1;
 	height: 0;
-	background: var(--white);
+	background: var(--bg-color);
 	box-shadow: 0 12px 8px -7px rgba(0, 0, 0, 0.1);
 	transition: all .5;
 	overflow: hidden;
@@ -107,7 +116,7 @@ ion-header ion-toolbar ion-title {
 
 			h2 {
 				margin: 0;
-				color: var(--text-black);
+				color: var(--black);
 				font-size: 1rem;
 				font-weight: 500;
 				padding-bottom: 5px;
@@ -115,7 +124,7 @@ ion-header ion-toolbar ion-title {
 
 			p {
 				margin: 0;
-				color: var(--text-black);
+				color: var(--black);
 				font-size: .95rem;
 				font-weight: 400;
 			}
@@ -155,7 +164,7 @@ ion-footer {
 	ion-card {
 		margin: 0;
 		border-radius: 0;
-		background: var(--white);
+		background: var(--bg-color);
 		padding: 14px 15px;
 		box-shadow: none;
 
@@ -167,7 +176,7 @@ ion-footer {
 
 				h2 {
 					margin: 0;
-					color: var(--text-black);
+					color: var(--black);
 					font-size: .95rem;
 					font-weight: 700;
 					padding-bottom: 5px;
@@ -180,7 +189,7 @@ ion-footer {
 					font-weight: 500;
 
 					span {
-						color: var(--text-light2);
+						color: var(--black);
 					}
 				}
 
@@ -225,7 +234,7 @@ ion-footer {
 					width: 3px;
 					height: 3px;
 					border-radius: 50%;
-					background: var(--text-light2);
+					background: var(--black);
 					margin: 3px 0;
 				}
 
@@ -245,7 +254,7 @@ ion-footer {
 						min-width: 30px;
 						position: relative;
 						top: 6px;
-						background: var(--white);
+						background: var(--bg-color);
 					}
 
 				}
@@ -253,7 +262,7 @@ ion-footer {
 				.text_box {
 					h2 {
 						margin: 0;
-						color: var(--text-black);
+						color: var(--black);
 						font-size: .95rem;
 						font-weight: 700;
 						padding-bottom: 3px;
@@ -261,7 +270,7 @@ ion-footer {
 
 					p {
 						margin: 0;
-						color: var(--text-black);
+						color: var(--black);
 						font-size: .82rem;
 					}
 				}
