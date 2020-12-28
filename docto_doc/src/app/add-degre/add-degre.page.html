@@ -8,13 +8,13 @@
 	</ion-toolbar> 
 	<div class="search_box d-flex">
 		<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
-		<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_degree' | translate}}"></ion-searchbar>
+		<ion-searchbar style="color: #000;" class="ion-no-padding" searchIcon="hide" placeholder="{{'search_degree' | translate}}"></ion-searchbar>
 	</div>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg_color"> 
 	<ion-list lines="none">
-		<h2>{{'select_degrees_to_add' | translate}}</h2>
+		<h2 style="color: #000; margin-bottom: 15px;">{{'select_degrees_to_add' | translate}}</h2>
 		<ion-item *ngFor="let info of degree">
 			<div class="item_inner d-flex">
 				<ion-checkbox [checked]="info.check"></ion-checkbox>

@@ -84,7 +84,7 @@ ion-header ion-toolbar ion-title {
 }
 
 .rating_details {
-	background: var(--white);
+	background: var(--bg-color);
 	padding: 19px 10px 19px 20px;
 	margin-bottom: 8px;
 
@@ -126,7 +126,7 @@ ion-list {
 
 	ion-item {
 		padding: 11px 18px;
-		background: var(--white);
+		background: var(--bg-color);
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;
 		--padding-start: 0;
@@ -137,8 +137,10 @@ ion-list {
 
 		.item_inner {
 			width: 100%;
+			background-color: var(--bg-color);
 
 			.reviewer_details {
+				background-color: var(--bg-color);
 				padding-bottom: 17px;
 				width: 100%;
 

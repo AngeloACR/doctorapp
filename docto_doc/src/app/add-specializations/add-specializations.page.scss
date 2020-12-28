@@ -1,9 +1,18 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+}
+
 ion-header {
 	.search_box {
-		background: var(--white);
+		background: var(--bg-color);
 		width: calc(100% - 0px);
 		border-radius: 3px;
-		margin: 0 auto;
+		margin: 0 auto; 
 		padding: 0 15px;
 		position: relative;
 		overflow: hidden;
@@ -21,7 +30,7 @@ ion-header {
 		}
 
 		ion-searchbar {
-			--background: var(--transparent) !important;
+			--background: var(--bg-color) !important;
 			--color: var(--text-light2);
 			--placeholder-opacity: 1;
 			--placeholder-font-weight: 400 !important;
@@ -32,7 +41,7 @@ ion-header {
 }
 
 ion-list {
-	background: none;
+	background: var(--bg-color);
 	padding: 0;
 	border-top: 5px solid var(--bg-color);
 	padding-top: 20px;
@@ -46,6 +55,7 @@ ion-list {
 	}
 
 	ion-item {
+		background: var(--bg-color);
 		padding: 7px 20px;
 		margin-bottom: 14px;
 		min-height: unset !important;

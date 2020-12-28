@@ -1,19 +1,20 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
-		</ion-buttons> 
-		<ion-title>{{'add_specialization' | translate}}</ion-title>
-	</ion-toolbar>
+			<ion-back-button text="" style="position: absolute !important;" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'add_specialization' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
+	</ion-toolbar> 
 	<div class="search_box d-flex">
 		<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
-		<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_specialization' | translate}}"></ion-searchbar>
+		<ion-searchbar style="color: #000;" class="ion-no-padding" searchIcon="hide" placeholder="{{'search_degree' | translate}}"></ion-searchbar>
 	</div>
 </ion-header>
-
-<ion-content>
+ 
+<ion-content class="bg_color">
 	<ion-list lines="none">
-		<h2>{{'select_specialization_to_add' | translate}}</h2>
+		<h2 style="color: #000;">{{'select_specialization_to_add' | translate}}</h2>
 		<ion-item *ngFor="let info of especialidad">
 			<div class="item_inner d-flex">
 				<ion-checkbox [checked]="info.check"></ion-checkbox>

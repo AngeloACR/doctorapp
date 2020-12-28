@@ -1,31 +1,21 @@
 ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
 	padding: 0 15px !important;
-
-	span {
-		&.center_title {
-			position: absolute;
-			left: 0;
-			width: 100%;
-			text-align: center;
-		}
-	}
-
-	ion-icon {
-		font-size: 1.6rem;
-		position: relative;
-		z-index: 9999;
-	}
 }
 
 ion-list {
-	background: var(--transparent) !important;
+	background: var(--bg-color) !important;
 	margin: 0;
 	padding: 0;
 	padding-top: 8px;
 
 	h2 {
 		margin: 0;
-		color: var(--text-light2);
+		color: var(--black);
 		font-weight: 400;
 		font-size: .9rem;
 		padding: 15px 21px 18px 21px;
@@ -33,7 +23,7 @@ ion-list {
 
 	ion-item {
 		padding: 14px 20px 14px 0px;
-		background: var(--white);
+		background: var(--bg-color);
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;
 		--padding-start: 0;
@@ -43,6 +33,7 @@ ion-list {
 
 		.item_inner {
 			width: 100%;
+			background-color: var(--bg-color);
 
 			.date_time {
 				min-width: 65px;
@@ -52,7 +43,7 @@ ion-list {
 
 				h3 {
 					margin: 0;
-					color: var(--text-light2);
+					color: var(--black);
 					font-weight: 400;
 					font-size: .7rem;
 
@@ -140,7 +131,7 @@ ion-list {
 							margin: 0;
 							font-size: .93rem;
 							font-weight: 400;
-							color: var(--text-light2);
+							color: var(--black);
 
 							ion-icon {
 								color: var(--primary);
