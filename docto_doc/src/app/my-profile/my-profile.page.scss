@@ -1,11 +1,11 @@
 ion-header {
-	background: var(--white);
+	background: var(--bg-color);
 
 	ion-toolbar {
 		position: absolute;
 		left: 0;
 		z-index: 999;
-		width: 100%;
+		width: 100%; 
 
 	}
 
@@ -79,11 +79,12 @@ ion-header {
 
 ion-list {
 	padding: 0;
-	background: var(--transparent) !important;
+	background: var(--bg-color) !important;
 	margin: 0;
 	padding: 0;
 
 	ion-card {
+		background: var(--bg-color) !important;
 		margin: 0;
 		width: 100%;
 		margin-bottom: 8px;

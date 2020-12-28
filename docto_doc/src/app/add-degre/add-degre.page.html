@@ -1,10 +1,11 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+			<ion-back-button text="" style="position: absolute !important;" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
-		<ion-title>{{'add_degree' | translate}}</ion-title>
-	</ion-toolbar>
+		<ion-title style="position: relative; height: 70px; font-size: 18px;">{{'add_degree' | translate}}</ion-title>
+		<img style=" width: 100%; display: flex; height: 70px; margin: auto;" src="assets/images/FONDO_PESTAÑAS.png">
+	</ion-toolbar> 
 	<div class="search_box d-flex">
 		<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
 		<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_degree' | translate}}"></ion-searchbar>

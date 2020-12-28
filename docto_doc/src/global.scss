@@ -13,20 +13,20 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-:root {
+:root { 
 	--white: #fff;
-	--primary: #0fc1a7;
-	--dark_primary: #0a7e6d;
-	--bg-color: #f3f3f3;
+	--primary:  #0493d4;   //#0fc1a7;
+	--secondary: #78c5ee;
+	--bg-color: #d3d3d3;
 	--info_field_bg: #f9f9f9;
 	--transparent: rgba(0, 0, 0, 0);
 	--text-light: #7C7C7C;
 	--text-light2: #ababab;
-	--text-black: #000;
 	--text-dark: #5b5b5b;
 	--red_color: #D71E1E;
 	--yelow_color: #ffba00;
 	--green_color: #21B624;
+	--black: #000;
 
 }
 
@@ -120,7 +120,7 @@ ion-header {
 		display: flex;
 		align-items: center;
 		min-height: 60px !important;
-		height: auto;
+		height: auto; 
 		overflow: visible !important;
 		--border-width: 0 !important;
 
@@ -229,7 +229,7 @@ ion-header {
 		box-shadow: none !important;
 		margin: 0 auto;
 		--background: var(--transparent);
-		background: var(--bg-color);
+		background: var(--info_field_bg);
 		align-items: flex-start;
 		--inner-padding-end: 0px;
 		--inner-min-height: unset !important;

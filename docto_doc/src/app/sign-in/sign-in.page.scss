@@ -2,7 +2,7 @@
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	margin-bottom: 80px;
+	margin-bottom: 80px; 
 
 	&::before {
 		content: '';
@@ -20,8 +20,8 @@
 	.logo_box {
 		position: relative;
 		z-index: 99;
-		width: 125px;
-		margin: 130px auto 77px auto;
+		width: 145px;
+		margin: 170px auto 150px auto;
 	}
 
 	.welcome_text {
@@ -29,7 +29,7 @@
 		z-index: 99;
 		color: var(--white);
 		padding: 0 20px;
-		margin-bottom: 60px;
+		margin-bottom: 450px;
 
 		h2 {
 			margin: 0;
@@ -58,6 +58,7 @@
 .quick_signin {
 	width: calc(100% - 40px);
 	margin: 0 auto;
+	background-color: #d3d3d3;
 
 	h4 {
 		margin: 0;
@@ -85,11 +86,11 @@
 
 
 		&.facebook {
-			--background: #3C5A9A !important;
+			--background: #1474bb !important;
 		}
 
 		&.gmail {
-			--background: #fff !important;
+			--background: #d3d3d3 !important;
 			color: #000 !important;
 			font-weight: 500;
 		}
